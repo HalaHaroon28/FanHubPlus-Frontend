@@ -99,7 +99,7 @@ const ManageUsersPage = () => {
               return {
                 id: u._id,
                 _id: u._id,
-                avatar: u.avatarUrl || "/ /src/assets/images/kael_vex_1790281397401.jpg",
+                avatar: u.avatarUrl || "/src/assets/images/kael_vex_1790281397401.jpg",
                 name: u.name,
                 username: u.username || `@${u.name.toLowerCase().replace(/\s+/g, "")}`,
                 email: u.email,
@@ -511,7 +511,7 @@ const ManageUsersPage = () => {
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             onError={(e) => {
                               e.currentTarget.src =
-                                "/ /src/assets/images/luffy_avatar_1790269807034.jpg";
+                                "/src/assets/images/luffy_avatar_1790269807034.jpg";
                             }}
                           />
                         </div>

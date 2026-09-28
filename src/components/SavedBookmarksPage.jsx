@@ -110,7 +110,7 @@ const SavedBookmarksPage = ({
             target.imageUrl ||
             target.mediaUrl ||
             (target.images && target.images[0]) ||
-            "/ /src/assets/images/fandom_banner_1790273074334.jpg";
+            "/src/assets/images/fandom_banner_1790273074334.jpg";
 
           return {
             id: b._id,

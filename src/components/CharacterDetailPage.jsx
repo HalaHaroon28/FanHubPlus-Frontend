@@ -73,8 +73,8 @@ export const CharacterDetailPage = ({
   const lore = character?.lore || character?.bio || "Master of elemental forces and protector of worlds.";
   const abilities = character?.abilities || (character?.tags && character.tags.length > 0 ? character.tags : ["Starlight Resonance", "Gravitational Rift"]);
 
-  const bgImage = character?.backgroundImage || character?.bgImage || character?.imageUrl || character?.image || getRelatedBgImage(character) || "/ /src/assets/images/fandom_banner_1790273074334.jpg";
-  const portraitImage = character?.imageUrl || character?.image || "/ /src/assets/images/kael_vex_1790281397401.jpg";
+  const bgImage = character?.backgroundImage || character?.bgImage || character?.imageUrl || character?.image || getRelatedBgImage(character) || "/src/assets/images/fandom_banner_1790273074334.jpg";
+  const portraitImage = character?.imageUrl || character?.image || "/src/assets/images/kael_vex_1790281397401.jpg";
 
   const handleToggleSave = async () => {
     const token = localStorage.getItem("token");

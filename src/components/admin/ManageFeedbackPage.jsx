@@ -109,7 +109,7 @@ const ManageFeedbackPage = () => {
                     : "@fan_member",
                   avatar:
                     f.userId?.avatarUrl ||
-                    "/ /src/assets/images/nix_ember_1790281532486.jpg"
+                    "/src/assets/images/nix_ember_1790281532486.jpg"
                 },
                 date: dateStr,
                 status: st,
@@ -610,7 +610,7 @@ const ManageFeedbackPage = () => {
                               className="w-full h-full object-cover"
                               onError={(e) => {
                                 e.currentTarget.src =
-                                  "/ /src/assets/images/luffy_avatar_1790269807034.jpg";
+                                  "/src/assets/images/luffy_avatar_1790269807034.jpg";
                               }}
                             />
                           </div>

@@ -17,7 +17,7 @@ const WikiModal = ({
         {/* Header Cover Banner */}
         <div className="relative h-44 sm:h-52 w-full bg-black overflow-hidden shrink-0">
           <img
-            src={wiki.image || wiki.avatar || "/ /src/assets/images/pokeball_real_render_1790180829855.jpg"}
+            src={wiki.image || wiki.avatar || "/src/assets/images/pokeball_real_render_1790180829855.jpg"}
             alt={wiki.name}
             className="w-full h-full object-cover"
           />

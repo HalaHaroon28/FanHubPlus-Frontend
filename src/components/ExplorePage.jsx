@@ -70,7 +70,7 @@ const getPdfUrl = (item) => {
 };
 
 const getSafeCoverImage = (item) => {
-  if (!item) return "/ /src/assets/images/one_piece_luffy_1790180189080.jpg";
+  if (!item) return "/src/assets/images/one_piece_luffy_1790180189080.jpg";
   const candidates = [
     item.thumbnailUrl,
     item.thumbnail,
@@ -84,7 +84,7 @@ const getSafeCoverImage = (item) => {
       return url;
     }
   }
-  return "/ /src/assets/images/one_piece_luffy_1790180189080.jpg";
+  return "/src/assets/images/one_piece_luffy_1790180189080.jpg";
 };
 
 const getCategoryBadgeStyles = (catName) => {
@@ -893,7 +893,7 @@ const ExplorePage = ({
       {/* 2. HEADER BANNER */}
       <div className="relative w-full h-[180px] sm:h-[200px] overflow-hidden bg-zinc-950 border-b border-[#F0E8DD]">
         <img
-          src="/ /src/assets/images/fandom_banner_1790273074334.jpg"
+          src="/src/assets/images/fandom_banner_1790273074334.jpg"
           alt="Content Explorer Cover"
           className="absolute inset-0 w-full h-full object-cover brightness-[0.70] opacity-90 contrast-[1.1]"
         />

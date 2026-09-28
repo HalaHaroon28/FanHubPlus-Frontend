@@ -5,7 +5,7 @@ const FANDOM_TOOLS = [
     tagline: "Pick two Wuthering Waves Resonators, compare their stats, and simulate an Arena battle to see who comes out on top.",
     category: "Gaming Simulator",
     badge: "ARENA SIM",
-    image: "/ /src/assets/images/halo_master_chief_1790180155350.jpg",
+    image: "/src/assets/images/halo_master_chief_1790180155350.jpg",
     description: "Stat calculator and damage multiplier comparison engine for Wuthering Waves characters including Jiyan, Yinlin, and Changli."
   },
   {
@@ -14,7 +14,7 @@ const FANDOM_TOOLS = [
     tagline: "Plan your Shindo Life loadout: pick bloodlines, elements, and moves, check for GCD conflicts, and share your build via link.",
     category: "Build Planner",
     badge: "PLAN YOUR BUILD",
-    image: "/ /src/assets/images/sledgehammer_red_game_1790180174083.jpg",
+    image: "/src/assets/images/sledgehammer_red_game_1790180174083.jpg",
     description: "Optimize sub-abilities, companion synergies, and global cooldown timers for Roblox Shindo Life competitive PvP."
   },
   {
@@ -23,7 +23,7 @@ const FANDOM_TOOLS = [
     tagline: "A Pet Index guide for the Roblox game Steal An Egg — browse all pets and eggs by biome and rarity, track which ones you've collected.",
     category: "Database & Tracker",
     badge: "COLLECTION TRACKER",
-    image: "/ /src/assets/images/pokeball_real_render_1790180829855.jpg",
+    image: "/src/assets/images/pokeball_real_render_1790180829855.jpg",
     description: "Complete drop rates, hatching probabilities, secret multipliers, and biome maps for all collectible pets."
   },
   {
@@ -32,7 +32,7 @@ const FANDOM_TOOLS = [
     tagline: "Create, rank, and share! Drag-and-drop tier lists for any Fandom in seconds, share your rankings with the world.",
     category: "Community Tool",
     badge: "S A B C D",
-    image: "/ /src/assets/images/one_piece_luffy_1790180189080.jpg",
+    image: "/src/assets/images/one_piece_luffy_1790180189080.jpg",
     description: "Preloaded with anime power scalers, Pokémon competitive tiers, Elden Ring weapon rankings, and movie franchises."
   },
   {
@@ -41,7 +41,7 @@ const FANDOM_TOOLS = [
     tagline: "Plan your Bloodlines 2 build on an interactive skill tree: order unlocks, track AP, Blood Resonance and trainer visits, and share builds via link.",
     category: "Skill Tree",
     badge: "SKILL TREE",
-    image: "/ /src/assets/images/elden_ring_tarnished_1790180785046.jpg",
+    image: "/src/assets/images/elden_ring_tarnished_1790180785046.jpg",
     description: "Vampire: The Masquerade – Bloodlines 2 clan discipline matrix, feeding affinities, and social stealth trees."
   },
   {
@@ -50,7 +50,7 @@ const FANDOM_TOOLS = [
     tagline: "Find the shortest connection path between any two Star Trek characters through shared episode appearances.",
     category: "Six Degrees Game",
     badge: "PLAY DAILY",
-    image: "/ /src/assets/images/christina_chong_dog_1790180818784.jpg",
+    image: "/src/assets/images/christina_chong_dog_1790180818784.jpg",
     description: "Six Degrees of the Federation — test your Star Trek canon trivia by linking Picard, Spock, Janeway, and La'an Noonien-Singh."
   }
 ];

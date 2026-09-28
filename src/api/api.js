@@ -264,9 +264,9 @@ export const fetchContentItems = async () => {
         rating: item.thumbsUpRatio ? (item.thumbsUpRatio / 10).toFixed(1) : "9.5",
         genre: item.tags?.join(", ") || "Action",
         desc: item.body || "",
-        image: item.thumbnailUrl || item.mediaUrl || "/ /src/assets/images/mafuyu_anime_art_1790180850935.jpg",
-        posterImage: item.thumbnailUrl || item.mediaUrl || "/ /src/assets/images/mafuyu_anime_art_1790180850935.jpg",
-        videoThumbnail: item.mediaUrl || item.thumbnailUrl || "/ /src/assets/images/mafuyu_anime_art_1790180850935.jpg",
+        image: item.thumbnailUrl || item.mediaUrl || "/src/assets/images/mafuyu_anime_art_1790180850935.jpg",
+        posterImage: item.thumbnailUrl || item.mediaUrl || "/src/assets/images/mafuyu_anime_art_1790180850935.jpg",
+        videoThumbnail: item.mediaUrl || item.thumbnailUrl || "/src/assets/images/mafuyu_anime_art_1790180850935.jpg",
         backgroundImage: item.thumbnailUrl || item.mediaUrl,
       }));
     }
@@ -295,9 +295,9 @@ export const fetchContentById = async (id) => {
         thumbsUpCount: item.thumbsUpCount || 0,
         genre: item.tags?.join(", ") || "Action",
         desc: item.body || "",
-        image: item.thumbnailUrl || item.mediaUrl || "/ /src/assets/images/mafuyu_anime_art_1790180850935.jpg",
-        posterImage: item.thumbnailUrl || item.mediaUrl || "/ /src/assets/images/mafuyu_anime_art_1790180850935.jpg",
-        videoThumbnail: item.mediaUrl || item.thumbnailUrl || "/ /src/assets/images/mafuyu_anime_art_1790180850935.jpg",
+        image: item.thumbnailUrl || item.mediaUrl || "/src/assets/images/mafuyu_anime_art_1790180850935.jpg",
+        posterImage: item.thumbnailUrl || item.mediaUrl || "/src/assets/images/mafuyu_anime_art_1790180850935.jpg",
+        videoThumbnail: item.mediaUrl || item.thumbnailUrl || "/src/assets/images/mafuyu_anime_art_1790180850935.jpg",
         backgroundImage: item.thumbnailUrl || item.mediaUrl,
         submittedBy: item.submittedBy,
       };
@@ -328,7 +328,7 @@ export const MOCK_USERS_STATS = {
 export const MOCK_USERS_DATA = [
   {
     id: "user-1",
-    avatar: "/ /src/assets/images/kael_vex_1790281397401.jpg",
+    avatar: "/src/assets/images/kael_vex_1790281397401.jpg",
     name: "Rayan Frost",
     username: "@rayanfrost",
     email: "rayan.frost@FanHub.io",
@@ -346,7 +346,7 @@ export const MOCK_USERS_DATA = [
   },
   {
     id: "user-2",
-    avatar: "/ /src/assets/images/lumi_idol_1790281470774.jpg",
+    avatar: "/src/assets/images/lumi_idol_1790281470774.jpg",
     name: "Sana Rivers",
     username: "@sanarivers",
     email: "sana.rivers@FanHub.io",
@@ -364,7 +364,7 @@ export const MOCK_USERS_DATA = [
   },
   {
     id: "user-3",
-    avatar: "/ /src/assets/images/orion_steel_1790281419734.jpg",
+    avatar: "/src/assets/images/orion_steel_1790281419734.jpg",
     name: "Kai Summers",
     username: "@kaisummers",
     email: "kai.summers@FanHub.io",
@@ -382,7 +382,7 @@ export const MOCK_USERS_DATA = [
   },
   {
     id: "user-4",
-    avatar: "/ /src/assets/images/elara_voss_1790281586127.jpg",
+    avatar: "/src/assets/images/elara_voss_1790281586127.jpg",
     name: "Elara Voss",
     username: "@elaravoss",
     email: "elara.voss@FanHub.io",
@@ -400,7 +400,7 @@ export const MOCK_USERS_DATA = [
   },
   {
     id: "user-5",
-    avatar: "/ /src/assets/images/seraphine_vale_1790281437502.jpg",
+    avatar: "/src/assets/images/seraphine_vale_1790281437502.jpg",
     name: "Tobias Reed",
     username: "@tobiasreed",
     email: "tobias.reed@FanHub.io",
@@ -418,7 +418,7 @@ export const MOCK_USERS_DATA = [
   },
   {
     id: "user-6",
-    avatar: "/ /src/assets/images/jace_rivers_1790281454743.jpg",
+    avatar: "/src/assets/images/jace_rivers_1790281454743.jpg",
     name: "Lila Chen",
     username: "@lilachen",
     email: "lila.chen@FanHub.io",
@@ -436,7 +436,7 @@ export const MOCK_USERS_DATA = [
   },
   {
     id: "user-7",
-    avatar: "/ /src/assets/images/zane_rook_1790281570770.jpg",
+    avatar: "/src/assets/images/zane_rook_1790281570770.jpg",
     name: "Zane Patel",
     username: "@zanepatel",
     email: "zane.patel@FanHub.io",
@@ -454,7 +454,7 @@ export const MOCK_USERS_DATA = [
   },
   {
     id: "user-8",
-    avatar: "/ /src/assets/images/nix_ember_1790281532486.jpg",
+    avatar: "/src/assets/images/nix_ember_1790281532486.jpg",
     name: "Mira Sullivan",
     username: "@mirasullivan",
     email: "mira.sullivan@FanHub.io",
@@ -499,7 +499,7 @@ export const updateUserRole = async (userId, newRole) => {
 export const createUser = async (userData) => {
   const newUser = {
     id: `user-${Date.now()}`,
-    avatar: userData.avatar || "/ /src/assets/images/kael_vex_1790281397401.jpg",
+    avatar: userData.avatar || "/src/assets/images/kael_vex_1790281397401.jpg",
     name: userData.name || "New User",
     username: userData.username || `@user${Date.now()}`,
     email: userData.email || "user@FanHub.io",
@@ -551,7 +551,7 @@ export const MOCK_FEEDBACK_ITEMS = [
     submittedBy: {
       name: "NovaRaven",
       username: "@novaraven",
-      avatar: "/ /src/assets/images/nix_ember_1790281532486.jpg"
+      avatar: "/src/assets/images/nix_ember_1790281532486.jpg"
     },
     date: "2025-05-17",
     status: "NEW",
@@ -564,7 +564,7 @@ export const MOCK_FEEDBACK_ITEMS = [
     submittedBy: {
       name: "PixelDreamer",
       username: "@pixeldreamer",
-      avatar: "/ /src/assets/images/lumi_idol_1790281470774.jpg"
+      avatar: "/src/assets/images/lumi_idol_1790281470774.jpg"
     },
     date: "2025-05-16",
     status: "RESOLVED",
@@ -577,7 +577,7 @@ export const MOCK_FEEDBACK_ITEMS = [
     submittedBy: {
       name: "LunaTide",
       username: "@lunatide",
-      avatar: "/ /src/assets/images/elara_voss_1790281586127.jpg"
+      avatar: "/src/assets/images/elara_voss_1790281586127.jpg"
     },
     date: "2025-05-15",
     status: "NEW",
@@ -590,7 +590,7 @@ export const MOCK_FEEDBACK_ITEMS = [
     submittedBy: {
       name: "StormByte",
       username: "@stormbyte",
-      avatar: "/ /src/assets/images/elara_voss_1790281586127.jpg"
+      avatar: "/src/assets/images/elara_voss_1790281586127.jpg"
     },
     date: "2025-05-14",
     status: "RESOLVED",
@@ -603,7 +603,7 @@ export const MOCK_FEEDBACK_ITEMS = [
     submittedBy: {
       name: "ZaraFlux",
       username: "@zaraflux",
-      avatar: "/ /src/assets/images/seraphine_vale_1790281437502.jpg"
+      avatar: "/src/assets/images/seraphine_vale_1790281437502.jpg"
     },
     date: "2025-05-13",
     status: "NEW",
@@ -616,7 +616,7 @@ export const MOCK_FEEDBACK_ITEMS = [
     submittedBy: {
       name: "KaiZen",
       username: "@kaizen",
-      avatar: "/ /src/assets/images/kael_vex_1790281397401.jpg"
+      avatar: "/src/assets/images/kael_vex_1790281397401.jpg"
     },
     date: "2025-05-12",
     status: "RESOLVED",
@@ -629,7 +629,7 @@ export const MOCK_FEEDBACK_ITEMS = [
     submittedBy: {
       name: "EchoSage",
       username: "@echosage",
-      avatar: "/ /src/assets/images/sae_jihyun_1790281620416.jpg"
+      avatar: "/src/assets/images/sae_jihyun_1790281620416.jpg"
     },
     date: "2025-05-11",
     status: "NEW",
@@ -642,7 +642,7 @@ export const MOCK_FEEDBACK_ITEMS = [
     submittedBy: {
       name: "OrionVex",
       username: "@orionvex",
-      avatar: "/ /src/assets/images/zane_rook_1790281570770.jpg"
+      avatar: "/src/assets/images/zane_rook_1790281570770.jpg"
     },
     date: "2025-05-10",
     status: "RESOLVED",
@@ -690,12 +690,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "KaiZen",
       username: "@kaizen",
-      avatar: "/ /src/assets/images/kael_vex_1790281397401.jpg"
+      avatar: "/src/assets/images/kael_vex_1790281397401.jpg"
     },
     date: "2025-05-18",
     status: "PENDING",
     content: "Open world games have redefined what it means to be immersed in a virtual world. The freedom to explore, choose your path, and shape your own story creates an experience unlike any other. From breathtaking landscapes to complex characters, open worlds offer endless possibilities for adventure and discovery.",
-    image: "/ /src/assets/images/aetheria_wanderer_1790282784893.jpg"
+    image: "/src/assets/images/aetheria_wanderer_1790282784893.jpg"
   },
   {
     id: "sub-2",
@@ -707,12 +707,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "NovaRaven",
       username: "@novaraven",
-      avatar: "/ /src/assets/images/nix_ember_1790281532486.jpg"
+      avatar: "/src/assets/images/nix_ember_1790281532486.jpg"
     },
     date: "2025-05-18",
     status: "PENDING",
     content: "An original high-fantasy landscape illustration portraying floating sky citadels, glowing ether rivers, and soaring cloud drakes over Aetheria.",
-    image: "/ /src/assets/images/shadow_realm_ruins_1790282841812.jpg"
+    image: "/src/assets/images/shadow_realm_ruins_1790282841812.jpg"
   },
   {
     id: "sub-3",
@@ -724,12 +724,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "ZaraFlux",
       username: "@zaraflux",
-      avatar: "/ /src/assets/images/seraphine_vale_1790281437502.jpg"
+      avatar: "/src/assets/images/seraphine_vale_1790281437502.jpg"
     },
     date: "2025-05-17",
     status: "PENDING",
     content: "A vibrant neon dusk skyline capturing nostalgic anime aesthetics with train crossings and warm sunset glow over futuristic Tokyo rooftops.",
-    image: "/ /src/assets/images/neon_beat_festival_1790282824470.jpg"
+    image: "/src/assets/images/neon_beat_festival_1790282824470.jpg"
   },
   {
     id: "sub-4",
@@ -741,12 +741,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "LunaTide",
       username: "@lunatide",
-      avatar: "/ /src/assets/images/elara_voss_1790281586127.jpg"
+      avatar: "/src/assets/images/elara_voss_1790281586127.jpg"
     },
     date: "2025-05-16",
     status: "PENDING",
     content: "Chapter 1 of Shadow Veil explores what happens when a rogue operative in Night City uncovers an AI construct harboring memories of a lost companion.",
-    image: "/ /src/assets/images/cyberpunk_2077_art_1790255907017.jpg"
+    image: "/src/assets/images/cyberpunk_2077_art_1790255907017.jpg"
   },
   {
     id: "sub-5",
@@ -758,12 +758,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "StormByte",
       username: "@stormbyte",
-      avatar: "/ /src/assets/images/orion_steel_1790281419734.jpg"
+      avatar: "/src/assets/images/orion_steel_1790281419734.jpg"
     },
     date: "2025-05-16",
     status: "PENDING",
     content: "A curated retrospective on indie masterpieces that deserved more spotlight in 2024, featuring innovative gameplay loops and heartfelt stories.",
-    image: "/ /src/assets/images/elden_ring_thumb_1790269858443.jpg"
+    image: "/src/assets/images/elden_ring_thumb_1790269858443.jpg"
   },
   {
     id: "sub-6",
@@ -775,12 +775,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "LunaTide",
       username: "@lunatide",
-      avatar: "/ /src/assets/images/elara_voss_1790281586127.jpg"
+      avatar: "/src/assets/images/elara_voss_1790281586127.jpg"
     },
     date: "2025-05-15",
     status: "PENDING",
     content: "Behind-the-scenes foam armor fabrication, LED soldering, and fabric dyeing for my regional convention costume debut.",
-    image: "/ /src/assets/images/kaneki_cosplay_1790277871710.jpg"
+    image: "/src/assets/images/kaneki_cosplay_1790277871710.jpg"
   },
   {
     id: "sub-7",
@@ -792,12 +792,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "ZaraFlux",
       username: "@zaraflux",
-      avatar: "/ /src/assets/images/seraphine_vale_1790281437502.jpg"
+      avatar: "/src/assets/images/seraphine_vale_1790281437502.jpg"
     },
     date: "2025-05-14",
     status: "PENDING",
     content: "An orchestral cinematic edit highlighting interstellar voyages and the timeless human drive to reach beyond the known stars.",
-    image: "/ /src/assets/images/interstellar_space_1790270312783.jpg"
+    image: "/src/assets/images/interstellar_space_1790270312783.jpg"
   },
   {
     id: "sub-8",
@@ -809,12 +809,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "NovaRaven",
       username: "@novaraven",
-      avatar: "/ /src/assets/images/nix_ember_1790281532486.jpg"
+      avatar: "/src/assets/images/nix_ember_1790281532486.jpg"
     },
     date: "2025-05-14",
     status: "PENDING",
     content: "Exploring the aesthetic nostalgia and cozy storytelling of 90s serialized television that keeps modern audiences re-watching.",
-    image: "/ /src/assets/images/stranger_things_thumb_1790269900192.jpg"
+    image: "/src/assets/images/stranger_things_thumb_1790269900192.jpg"
   },
   {
     id: "sub-9",
@@ -826,12 +826,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "EchoSage",
       username: "@echosage",
-      avatar: "/ /src/assets/images/sae_jihyun_1790281620416.jpg"
+      avatar: "/src/assets/images/sae_jihyun_1790281620416.jpg"
     },
     date: "2025-05-13",
     status: "PENDING",
     content: "Dynamic line-weight analysis and screentone composition breakdown of high-impact shonen combat panels.",
-    image: "/ /src/assets/images/jjk_manga_cover_1790257065556.jpg"
+    image: "/src/assets/images/jjk_manga_cover_1790257065556.jpg"
   },
   {
     id: "sub-10",
@@ -843,12 +843,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "EchoSage",
       username: "@echosage",
-      avatar: "/ /src/assets/images/sae_jihyun_1790281620416.jpg"
+      avatar: "/src/assets/images/sae_jihyun_1790281620416.jpg"
     },
     date: "2025-05-12",
     status: "PENDING",
     content: "Detailed documentation and sprite sheet preview for a total overhaul character mod adding unique animations and weapon skills.",
-    image: "/ /src/assets/images/minecraft_scenery_1790270298136.jpg"
+    image: "/src/assets/images/minecraft_scenery_1790270298136.jpg"
   },
   {
     id: "sub-11",
@@ -860,12 +860,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "PixelDreamer",
       username: "@pixeldreamer",
-      avatar: "/ /src/assets/images/lumi_idol_1790281470774.jpg"
+      avatar: "/src/assets/images/lumi_idol_1790281470774.jpg"
     },
     date: "2025-05-12",
     status: "PENDING",
     content: "From stage outfits to airport looks, exploring how 5th generation K-Pop aesthetics are blending cyberpunk streetwear with couture chic.",
-    image: "/ /src/assets/images/newjeans_thumb_1790269920672.jpg"
+    image: "/src/assets/images/newjeans_thumb_1790269920672.jpg"
   },
   {
     id: "sub-12",
@@ -877,12 +877,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "TobiasReed",
       username: "@tobiasreed",
-      avatar: "/ /src/assets/images/seraphine_vale_1790281437502.jpg"
+      avatar: "/src/assets/images/seraphine_vale_1790281437502.jpg"
     },
     date: "2025-05-11",
     status: "PENDING",
     content: "Hand-inked comic spread featuring the climax of the dimensional war, filled with cinematic speedlines and kinetic impact.",
-    image: "/ /src/assets/images/spiderman_comic_1790270342039.jpg"
+    image: "/src/assets/images/spiderman_comic_1790270342039.jpg"
   },
   {
     id: "sub-13",
@@ -894,12 +894,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "OrionVex",
       username: "@orionvex",
-      avatar: "/ /src/assets/images/zane_rook_1790281570770.jpg"
+      avatar: "/src/assets/images/zane_rook_1790281570770.jpg"
     },
     date: "2025-05-10",
     status: "PENDING",
     content: "Environmental matte painting depicting rain-slicked neon alleys, holographic adverts, and hovering transit pods.",
-    image: "/ /src/assets/images/midnight_signal_rain_1790283977485.jpg"
+    image: "/src/assets/images/midnight_signal_rain_1790283977485.jpg"
   },
   {
     id: "sub-14",
@@ -911,12 +911,12 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "KaiZen",
       username: "@kaizen",
-      avatar: "/ /src/assets/images/kael_vex_1790281397401.jpg"
+      avatar: "/src/assets/images/kael_vex_1790281397401.jpg"
     },
     date: "2025-05-09",
     status: "PENDING",
     content: "An interview retrospective exploring how veteran voice actors bring depth and emotional resonance to unforgettable anime heroes.",
-    image: "/ /src/assets/images/anime_desk_study_1790284532931.jpg"
+    image: "/src/assets/images/anime_desk_study_1790284532931.jpg"
   },
 
   // --- FEEDBACK (9 items) ---
@@ -930,7 +930,7 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "KaiZen",
       username: "@kaizen",
-      avatar: "/ /src/assets/images/kael_vex_1790281397401.jpg"
+      avatar: "/src/assets/images/kael_vex_1790281397401.jpg"
     },
     date: "2025-05-18",
     status: "PENDING",
@@ -946,7 +946,7 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "PixelDreamer",
       username: "@pixeldreamer",
-      avatar: "/ /src/assets/images/lumi_idol_1790281470774.jpg"
+      avatar: "/src/assets/images/lumi_idol_1790281470774.jpg"
     },
     date: "2025-05-17",
     status: "PENDING",
@@ -962,7 +962,7 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "ZaraFlux",
       username: "@zaraflux",
-      avatar: "/ /src/assets/images/seraphine_vale_1790281437502.jpg"
+      avatar: "/src/assets/images/seraphine_vale_1790281437502.jpg"
     },
     date: "2025-05-17",
     status: "PENDING",
@@ -978,7 +978,7 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "NovaRaven",
       username: "@novaraven",
-      avatar: "/ /src/assets/images/nix_ember_1790281532486.jpg"
+      avatar: "/src/assets/images/nix_ember_1790281532486.jpg"
     },
     date: "2025-05-16",
     status: "PENDING",
@@ -994,7 +994,7 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "StormByte",
       username: "@stormbyte",
-      avatar: "/ /src/assets/images/orion_steel_1790281419734.jpg"
+      avatar: "/src/assets/images/orion_steel_1790281419734.jpg"
     },
     date: "2025-05-15",
     status: "PENDING",
@@ -1010,7 +1010,7 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "StormByte",
       username: "@stormbyte",
-      avatar: "/ /src/assets/images/orion_steel_1790281419734.jpg"
+      avatar: "/src/assets/images/orion_steel_1790281419734.jpg"
     },
     date: "2025-05-15",
     status: "PENDING",
@@ -1026,7 +1026,7 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "LunaTide",
       username: "@lunatide",
-      avatar: "/ /src/assets/images/elara_voss_1790281586127.jpg"
+      avatar: "/src/assets/images/elara_voss_1790281586127.jpg"
     },
     date: "2025-05-14",
     status: "PENDING",
@@ -1042,7 +1042,7 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "KaiZen",
       username: "@kaizen",
-      avatar: "/ /src/assets/images/kael_vex_1790281397401.jpg"
+      avatar: "/src/assets/images/kael_vex_1790281397401.jpg"
     },
     date: "2025-05-13",
     status: "PENDING",
@@ -1058,7 +1058,7 @@ export const MOCK_PENDING_APPROVALS = [
     submittedBy: {
       name: "EchoSage",
       username: "@echosage",
-      avatar: "/ /src/assets/images/sae_jihyun_1790281620416.jpg"
+      avatar: "/src/assets/images/sae_jihyun_1790281620416.jpg"
     },
     date: "2025-05-13",
     status: "PENDING",
