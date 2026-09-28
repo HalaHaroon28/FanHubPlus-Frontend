@@ -5,7 +5,7 @@
  * to the Node/Express + MongoDB backend seamlessly later.
  */
 
-export const BASE_URL = (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.VITE_API_URL) || "http://localhost:5001/api";
+export const BASE_URL = (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.VITE_API_URL);
 
 export const MOCK_CONTENT_ITEMS = [
   {
