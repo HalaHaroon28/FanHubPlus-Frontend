@@ -24,6 +24,8 @@ import {
 } from "lucide-react";
 import { BASE_URL } from "../api/api";
 
+import animedesk from "../assets/images/anime_desk_study_1790284532931.jpg";
+
 const getCategoryBadgeStyle = (categoryName) => {
   const cat = (categoryName || "").toLowerCase();
   if (cat.includes("anime") || cat.includes("manga")) return "bg-[#FCE7F3] text-[#9D174D]";
@@ -927,7 +929,7 @@ const SubmitFanContentPage = ({
             <div className="bg-white rounded-2xl border border-stone-200/90 p-5 shadow-xs relative overflow-hidden">
               <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden opacity-90 sm:opacity-95">
                 <img
-                  src="/src/assets/images/anime_desk_study_1790284532931.jpg"
+                  src={animedesk}
                   alt="Anime creator at desk"
                   className="w-full h-full object-cover object-left"
                 />

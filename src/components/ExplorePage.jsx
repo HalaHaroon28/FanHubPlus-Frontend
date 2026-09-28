@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import { BASE_URL } from "../api/api";
 
+import fandombanner from "../assets/images/fandom_banner_1790273074334.jpg";
+
 const SAMPLE_VIDEO_FALLBACK = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 const SAMPLE_AUDIO_FALLBACK = "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3";
 
@@ -893,7 +895,7 @@ const ExplorePage = ({
       {/* 2. HEADER BANNER */}
       <div className="relative w-full h-[180px] sm:h-[200px] overflow-hidden bg-zinc-950 border-b border-[#F0E8DD]">
         <img
-          src="/src/assets/images/fandom_banner_1790273074334.jpg"
+          src={fandombanner}
           alt="Content Explorer Cover"
           className="absolute inset-0 w-full h-full object-cover brightness-[0.70] opacity-90 contrast-[1.1]"
         />

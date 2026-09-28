@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { BASE_URL } from "../api/api";
 
+import feedback from "../assets/images/feedback_cliff_sky_1790286020079.jpg";
+
 const FeedbackPage = ({ onNavigateHome, isLoggedIn = true, onOpenAuth, onRequireLogin }) => {
   const [feedbackType, setFeedbackType] = useState("Suggestion");
   const [subject, setSubject] = useState("");
@@ -437,7 +439,7 @@ const FeedbackPage = ({ onNavigateHome, isLoggedIn = true, onOpenAuth, onRequire
           }
           <div className="absolute inset-0 w-full h-full overflow-hidden">
             <img
-              src="/src/assets/images/feedback_cliff_sky_1790286020079.jpg"
+              src={feedback}
               alt="Anime traveler on cliff"
               className="w-full h-full object-cover"
             />

@@ -11,7 +11,7 @@ import {
   ThumbsDown
 } from "lucide-react";
 import { BASE_URL } from "../api/api";
-
+import banner from "../assets/images/fan_content_banner_art_1790284032615.jpg";
 const CATEGORIES = [
   "All",
   "Anime",
@@ -632,7 +632,7 @@ const ArticlesAndEventsPage = ({
           <div className="relative rounded-none overflow-hidden border border-[#E2E8F0] bg-gradient-to-r from-[#FAF8F5] via-[#EFF6FF] to-transparent shadow-xs flex flex-col sm:flex-row items-center justify-between p-4 sm:p-5 min-h-[96px]">
             <div className="absolute inset-y-0 right-0 w-2/3 sm:w-1/2 overflow-hidden pointer-events-none opacity-85">
               <img
-                src="/src/assets/images/fan_content_banner_art_1790284032615.jpg"
+                src={banner}
                 alt="Banner Illustration"
                 className="w-full h-full object-cover object-right"
               />

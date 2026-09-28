@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
 import { fetchCategoriesFromApi } from "../api/api";
-
+import fandombanner from "../assets/images/fandom_banner_1790273074334.jpg";
 const CATEGORY_IMAGE_MAP = {
   anime: "/src/assets/images/category_anime_1790259342339.jpg",
   gaming: "/src/assets/images/category_gaming_1790259361539.jpg",
@@ -121,7 +121,7 @@ const CategoryPage = ({ onSelectCategory }) => {
       <div className="w-full overflow-hidden border-b border-[#EDE4D6] bg-zinc-950 shadow-sm">
         <div className="relative w-full h-[180px] sm:h-[220px] overflow-hidden">
           <img
-            src="/src/assets/images/fandom_banner_1790273074334.jpg"
+            src={fandombanner}
             alt="Categories Banner"
             className="w-full h-full object-cover object-center brightness-[0.70] contrast-[1.1]"
           />

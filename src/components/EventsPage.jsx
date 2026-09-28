@@ -15,17 +15,19 @@ import {
   Search,
   Loader2,
   ExternalLink,
-  Clock
+  Clock,
 } from "lucide-react";
 import { BASE_URL } from "../api/api";
 import EventLocationMap from "./common/EventLocationMap";
+import banner from "../assets/images/fan_content_banner_art_1790284032615.jpg";
 
+import karachimap from "../assets/images/google_maps_karachi_1790285156619.jpg";
 const EVENT_FORMAT_FILTERS = [
   "All",
   "Convention",
   "Cosplay Meetup",
   "Screening",
-  "Online"
+  "Online",
 ];
 
 // Approximate city coordinates for GPS distance calculation and map pin rendering
@@ -37,7 +39,7 @@ const CITY_COORDS = {
   seoul: { lat: 37.5665, lng: 126.978, x: 78, y: 38 },
   london: { lat: 51.5074, lng: -0.1278, x: 30, y: 32 },
   "los angeles": { lat: 34.0522, lng: -118.2437, x: 20, y: 45 },
-  "new york": { lat: 40.7128, lng: -74.006, x: 28, y: 42 }
+  "new york": { lat: 40.7128, lng: -74.006, x: 28, y: 42 },
 };
 
 const calculateDistanceKm = (lat1, lon1, lat2, lon2) => {
@@ -47,36 +49,46 @@ const calculateDistanceKm = (lat1, lon1, lat2, lon2) => {
   const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos((lat1 * Math.PI) / 180) *
-    Math.cos((lat2 * Math.PI) / 180) *
-    Math.sin(dLon / 2) *
-    Math.sin(dLon / 2);
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return (R * c).toFixed(1);
 };
 
 const getEventImage = (event) => {
   if (event.imageUrl && event.imageUrl.trim()) return event.imageUrl;
-  if (event.images && event.images.length > 0 && event.images[0]) return event.images[0];
+  if (event.images && event.images.length > 0 && event.images[0])
+    return event.images[0];
   return "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&auto=format&fit=crop&q=80";
 };
 
 const getEventTypeStyle = (format) => {
   const f = (format || "").toLowerCase();
-  if (f.includes("meetup") || f.includes("cosplay")) return "bg-[#DCFCE7] text-[#15803D] border-[#BBF7D0]";
-  if (f.includes("screening") || f.includes("movie") || f.includes("cinema")) return "bg-[#DBEAFE] text-[#1E40AF] border-[#BFDBFE]";
-  if (f.includes("online") || f.includes("stream")) return "bg-[#FEF3C7] text-[#B45309] border-[#FDE68A]";
+  if (f.includes("meetup") || f.includes("cosplay"))
+    return "bg-[#DCFCE7] text-[#15803D] border-[#BBF7D0]";
+  if (f.includes("screening") || f.includes("movie") || f.includes("cinema"))
+    return "bg-[#DBEAFE] text-[#1E40AF] border-[#BFDBFE]";
+  if (f.includes("online") || f.includes("stream"))
+    return "bg-[#FEF3C7] text-[#B45309] border-[#FDE68A]";
   return "bg-[#F3E8FF] text-[#7E22CE] border-[#E9D5FF]";
 };
 
 const formatEventDate = (dateStr) => {
-  if (!dateStr) return { day: 15, month: "May", year: 2025, full: "May 15, 2025" };
+  if (!dateStr)
+    return { day: 15, month: "May", year: 2025, full: "May 15, 2025" };
   const d = new Date(dateStr);
-  if (isNaN(d.getTime())) return { day: 15, month: "May", year: 2025, full: dateStr };
+  if (isNaN(d.getTime()))
+    return { day: 15, month: "May", year: 2025, full: dateStr };
   return {
     day: d.getDate(),
     month: d.toLocaleDateString("en-US", { month: "short" }),
     year: d.getFullYear(),
-    full: d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
+    full: d.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    }),
   };
 };
 
@@ -85,7 +97,7 @@ const EventsPage = ({
   onNavigateSubmit,
   isLoggedIn = true,
   onOpenAuth,
-  onRequireLogin
+  onRequireLogin,
 }) => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -115,13 +127,13 @@ const EventsPage = ({
         (pos) => {
           setUserCoords({
             lat: parseFloat(pos.coords.latitude.toFixed(6)),
-            lng: parseFloat(pos.coords.longitude.toFixed(6))
+            lng: parseFloat(pos.coords.longitude.toFixed(6)),
           });
         },
         () => {
           // ignore or fallback
         },
-        { timeout: 8000, enableHighAccuracy: false }
+        { timeout: 8000, enableHighAccuracy: false },
       );
     }
   }, []);
@@ -153,7 +165,7 @@ const EventsPage = ({
   // Extract unique cities from events
   const dynamicCities = [
     "All Cities",
-    ...Array.from(new Set(events.map((e) => e.city).filter(Boolean)))
+    ...Array.from(new Set(events.map((e) => e.city).filter(Boolean))),
   ];
 
   // GPS Location handler
@@ -164,14 +176,16 @@ const EventsPage = ({
         (position) => {
           const { latitude, longitude } = position.coords;
           setUserCoords({ lat: latitude, lng: longitude });
-          setToastMessage(`Location updated (GPS: ${latitude.toFixed(2)}, ${longitude.toFixed(2)})`);
+          setToastMessage(
+            `Location updated (GPS: ${latitude.toFixed(2)}, ${longitude.toFixed(2)})`,
+          );
           setTimeout(() => setToastMessage(null), 3000);
         },
         () => {
           setUserCoords({ lat: 24.8607, lng: 67.0011 });
           setToastMessage("Using default location to sort nearby events");
           setTimeout(() => setToastMessage(null), 3000);
-        }
+        },
       );
     } else {
       setToastMessage("Geolocation is not supported by your browser");
@@ -181,7 +195,9 @@ const EventsPage = ({
 
   const handleGetTickets = (event) => {
     if (event.ticketLink && event.ticketLink.trim()) {
-      const url = event.ticketLink.startsWith("http") ? event.ticketLink.trim() : `https://${event.ticketLink.trim()}`;
+      const url = event.ticketLink.startsWith("http")
+        ? event.ticketLink.trim()
+        : `https://${event.ticketLink.trim()}`;
       window.open(url, "_blank");
       return;
     }
@@ -230,14 +246,24 @@ const EventsPage = ({
   // Calculate distance & sort if userCoords available
   const sortedEvents = [...filteredEvents].map((event, idx) => {
     const cityKey = (event.city || "karachi").toLowerCase();
-    const cityData = CITY_COORDS[cityKey] || { lat: 24.8607 + idx * 0.05, lng: 67.0011 + idx * 0.05, x: 60 + (idx % 3) * 10, y: 30 + (idx % 2) * 10 };
+    const cityData = CITY_COORDS[cityKey] || {
+      lat: 24.8607 + idx * 0.05,
+      lng: 67.0011 + idx * 0.05,
+      x: 60 + (idx % 3) * 10,
+      y: 30 + (idx % 2) * 10,
+    };
 
     const eventLat = event.latitude ? Number(event.latitude) : cityData.lat;
     const eventLng = event.longitude ? Number(event.longitude) : cityData.lng;
 
     let distanceStr = `${(2.4 + idx * 2.1).toFixed(1)} km away`;
     if (userCoords && userCoords.lat && userCoords.lng) {
-      const dist = calculateDistanceKm(userCoords.lat, userCoords.lng, eventLat, eventLng);
+      const dist = calculateDistanceKm(
+        userCoords.lat,
+        userCoords.lng,
+        eventLat,
+        eventLng,
+      );
       distanceStr = `${dist} km away`;
     }
 
@@ -247,14 +273,17 @@ const EventsPage = ({
       longitude: eventLng,
       distanceStr,
       mapX: cityData.x,
-      mapY: cityData.y
+      mapY: cityData.y,
     };
   });
 
   // Calendar calculations
   const year = calendarDate.getFullYear();
   const month = calendarDate.getMonth();
-  const monthName = calendarDate.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+  const monthName = calendarDate.toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
 
   const firstDayOfMonth = new Date(year, month, 1).getDay();
   const totalDaysInMonth = new Date(year, month + 1, 0).getDate();
@@ -281,14 +310,14 @@ const EventsPage = ({
   return (
     <div className="w-full bg-[#FAF8F5] min-h-full py-6 px-4 sm:px-6 font-sans select-none text-[#171717]">
       <div className="max-w-7xl mx-auto space-y-6">
-
         {/* PAGE HEADER */}
         <div className="pt-2 pb-1">
           <h1 className="text-2xl sm:text-3.5xl font-black tracking-tight uppercase font-titan text-[#171717]">
             EVENTS
           </h1>
           <p className="text-xs sm:text-sm font-semibold text-[#7A6F64] mt-0.5">
-            Discover fan conventions, cosplay meetups, and screening events near you with GPS & location services.
+            Discover fan conventions, cosplay meetups, and screening events near
+            you with GPS & location services.
           </p>
         </div>
 
@@ -321,7 +350,9 @@ const EventsPage = ({
             <div className="flex items-center gap-2">
               <MapPin size={16} className="text-[#525252] shrink-0" />
               <div>
-                <span className="block text-[10px] font-bold text-[#737373] leading-none">City</span>
+                <span className="block text-[10px] font-bold text-[#737373] leading-none">
+                  City
+                </span>
                 <div className="relative mt-0.5">
                   <select
                     value={selectedCity}
@@ -334,7 +365,10 @@ const EventsPage = ({
                       </option>
                     ))}
                   </select>
-                  <ChevronRight size={12} className="rotate-90 absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-[#737373]" />
+                  <ChevronRight
+                    size={12}
+                    className="rotate-90 absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-[#737373]"
+                  />
                 </div>
               </div>
             </div>
@@ -343,7 +377,9 @@ const EventsPage = ({
 
             {/* Event Format / Type Pills */}
             <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="text-xs font-bold text-[#171717] mr-1">Event Type</span>
+              <span className="text-xs font-bold text-[#171717] mr-1">
+                Event Type
+              </span>
               {EVENT_FORMAT_FILTERS.map((type) => {
                 const isActive = selectedType === type;
                 return (
@@ -351,10 +387,11 @@ const EventsPage = ({
                     key={type}
                     type="button"
                     onClick={() => setSelectedType(type)}
-                    className={`px-3 py-1 rounded-[8px] text-xs font-bold transition-all cursor-pointer ${isActive
+                    className={`px-3 py-1 rounded-[8px] text-xs font-bold transition-all cursor-pointer ${
+                      isActive
                         ? "bg-[#FEF3C7] text-black border border-[#F59E0B] shadow-2xs"
                         : "bg-white text-[#525252] border border-[#E5E7EB] hover:bg-stone-50"
-                      }`}
+                    }`}
                   >
                     {type}
                   </button>
@@ -382,7 +419,12 @@ const EventsPage = ({
               <h2 className="text-[15px] font-black uppercase tracking-tight font-titan text-[#171717]">
                 Nearby Events ({sortedEvents.length})
               </h2>
-              {loading && <Loader2 size={13} className="animate-spin text-stone-400 ml-1" />}
+              {loading && (
+                <Loader2
+                  size={13}
+                  className="animate-spin text-stone-400 ml-1"
+                />
+              )}
             </div>
 
             {sortedEvents.length === 0 && !loading ? (
@@ -404,7 +446,9 @@ const EventsPage = ({
               <div className="space-y-2.5 flex-1 flex flex-col justify-start">
                 {sortedEvents.map((event) => {
                   const eventImg = getEventImage(event);
-                  const isSelected = activePopupEvent?._id === event._id || activePopupEvent?.id === event.id;
+                  const isSelected =
+                    activePopupEvent?._id === event._id ||
+                    activePopupEvent?.id === event.id;
                   const dateInfo = formatEventDate(event.date);
 
                   return (
@@ -414,10 +458,11 @@ const EventsPage = ({
                         setActivePopupEvent(event);
                         setViewingEvent(event);
                       }}
-                      className={`bg-white rounded-[12px] border p-2.5 sm:p-3 flex gap-3 sm:gap-3.5 items-center shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all cursor-pointer group ${isSelected
+                      className={`bg-white rounded-[12px] border p-2.5 sm:p-3 flex gap-3 sm:gap-3.5 items-center shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all cursor-pointer group ${
+                        isSelected
                           ? "border-[#FFA800] ring-1 ring-[#FFA800]/30"
                           : "border-[#E5E7EB] hover:border-stone-300"
-                        }`}
+                      }`}
                     >
                       {/* Thumbnail */}
                       <div className="w-[100px] sm:w-[110px] aspect-[4/3] rounded-[8px] overflow-hidden shrink-0 bg-stone-900 shadow-2xs">
@@ -433,7 +478,7 @@ const EventsPage = ({
                         <div className="flex items-center justify-between gap-1">
                           <span
                             className={`text-[8.5px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider border ${getEventTypeStyle(
-                              event.format
+                              event.format,
                             )}`}
                           >
                             {event.format || "Convention"}
@@ -450,13 +495,20 @@ const EventsPage = ({
 
                         <div className="text-[10.5px] text-[#737373] space-y-0.5 font-medium">
                           <div className="flex items-center gap-1">
-                            <CalendarIcon size={11} className="shrink-0 text-[#9CA3AF]" />
+                            <CalendarIcon
+                              size={11}
+                              className="shrink-0 text-[#9CA3AF]"
+                            />
                             <span>
-                              {dateInfo.full} {event.time ? `• ${event.time}` : ""}
+                              {dateInfo.full}{" "}
+                              {event.time ? `• ${event.time}` : ""}
                             </span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <MapPin size={11} className="shrink-0 text-[#9CA3AF]" />
+                            <MapPin
+                              size={11}
+                              className="shrink-0 text-[#9CA3AF]"
+                            />
                             <span className="truncate">
                               {event.location || event.venue || event.city}
                             </span>
@@ -507,7 +559,7 @@ const EventsPage = ({
                 src={
                   mapMode === "satellite"
                     ? "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1400&auto=format&fit=crop&q=80"
-                    : "/src/assets/images/google_maps_karachi_1790285156619.jpg"
+                    : karachimap
                 }
                 alt="Interactive Map"
                 className="w-full h-full object-cover brightness-[1.02] contrast-[1.02]"
@@ -519,20 +571,22 @@ const EventsPage = ({
               <button
                 type="button"
                 onClick={() => setMapMode("map")}
-                className={`px-2.5 py-1 transition-colors cursor-pointer ${mapMode === "map"
+                className={`px-2.5 py-1 transition-colors cursor-pointer ${
+                  mapMode === "map"
                     ? "bg-white text-[#1A73E8] font-bold border-r border-stone-100"
                     : "bg-stone-50 text-[#5F6368]"
-                  }`}
+                }`}
               >
                 Map
               </button>
               <button
                 type="button"
                 onClick={() => setMapMode("satellite")}
-                className={`px-2.5 py-1 transition-colors cursor-pointer ${mapMode === "satellite"
+                className={`px-2.5 py-1 transition-colors cursor-pointer ${
+                  mapMode === "satellite"
                     ? "bg-white text-[#1A73E8] font-bold"
                     : "bg-stone-50 text-[#5F6368]"
-                  }`}
+                }`}
               >
                 Satellite
               </button>
@@ -543,7 +597,9 @@ const EventsPage = ({
               {sortedEvents.map((ev, index) => {
                 const posX = ev.mapX || 50 + ((index * 13) % 40);
                 const posY = ev.mapY || 35 + ((index * 17) % 35);
-                const isSelected = activePopupEvent?._id === ev._id || activePopupEvent?.id === ev.id;
+                const isSelected =
+                  activePopupEvent?._id === ev._id ||
+                  activePopupEvent?.id === ev.id;
 
                 return (
                   <div
@@ -553,10 +609,11 @@ const EventsPage = ({
                     onClick={() => setActivePopupEvent(ev)}
                   >
                     <div
-                      className={`w-6 h-6 rounded-full flex items-center justify-center shadow-md border-2 border-white ring-2 transition-transform ${isSelected
+                      className={`w-6 h-6 rounded-full flex items-center justify-center shadow-md border-2 border-white ring-2 transition-transform ${
+                        isSelected
                           ? "bg-[#FFA800] text-black scale-125 ring-[#FFA800]/50 z-30"
                           : "bg-[#9333EA] text-white ring-[#9333EA]/30 group-hover:scale-110"
-                        }`}
+                      }`}
                     >
                       <Ticket size={11} className="stroke-[2.5]" />
                     </div>
@@ -595,7 +652,7 @@ const EventsPage = ({
                     <div>
                       <span
                         className={`text-[7.5px] font-black px-1.5 py-0.2 rounded-full uppercase ${getEventTypeStyle(
-                          activePopupEvent.format
+                          activePopupEvent.format,
                         )}`}
                       >
                         {activePopupEvent.format || "Convention"}
@@ -607,7 +664,9 @@ const EventsPage = ({
                     </div>
                     <div className="text-[8.5px] text-[#737373] flex items-center gap-0.5 truncate">
                       <MapPin size={8} />
-                      <span className="truncate">{activePopupEvent.location || activePopupEvent.city}</span>
+                      <span className="truncate">
+                        {activePopupEvent.location || activePopupEvent.city}
+                      </span>
                     </div>
 
                     <button
@@ -684,7 +743,9 @@ const EventsPage = ({
                 >
                   <ChevronLeft size={16} />
                 </button>
-                <span className="text-xs font-bold text-[#171717]">{monthName}</span>
+                <span className="text-xs font-bold text-[#171717]">
+                  {monthName}
+                </span>
                 <button
                   type="button"
                   onClick={handleNextMonth}
@@ -722,7 +783,11 @@ const EventsPage = ({
                   const hasEvents = sortedEvents.some((ev) => {
                     if (!ev.date) return false;
                     const d = new Date(ev.date);
-                    return d.getDate() === dayNum && d.getMonth() === month && d.getFullYear() === year;
+                    return (
+                      d.getDate() === dayNum &&
+                      d.getMonth() === month &&
+                      d.getFullYear() === year
+                    );
                   });
 
                   return (
@@ -732,10 +797,11 @@ const EventsPage = ({
                       className="py-0.5 flex flex-col items-center justify-center cursor-pointer"
                     >
                       <div
-                        className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs shadow-xs transition-transform ${isSelected
+                        className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs shadow-xs transition-transform ${
+                          isSelected
                             ? "bg-[#FFA800] text-black scale-105"
                             : "hover:bg-stone-100 text-[#171717]"
-                          }`}
+                        }`}
                       >
                         {dayNum}
                       </div>
@@ -754,7 +820,9 @@ const EventsPage = ({
           {/* RIGHT 6 COLUMNS: EVENTS ON SELECTED DATE */}
           <div className="lg:col-span-6 space-y-3">
             <h3 className="text-sm sm:text-[14px] font-bold text-[#171717]">
-              Events on {calendarDate.toLocaleDateString("en-US", { month: "short" })} {selectedDay}, {year}
+              Events on{" "}
+              {calendarDate.toLocaleDateString("en-US", { month: "short" })}{" "}
+              {selectedDay}, {year}
             </h3>
 
             {eventsOnSelectedDate.length === 0 ? (
@@ -768,7 +836,9 @@ const EventsPage = ({
                     if (nextEv) {
                       const d = new Date(nextEv.date);
                       setSelectedDay(d.getDate());
-                      setCalendarDate(new Date(d.getFullYear(), d.getMonth(), 1));
+                      setCalendarDate(
+                        new Date(d.getFullYear(), d.getMonth(), 1),
+                      );
                     }
                   }}
                   className="text-xs text-[#E05315] font-bold hover:underline cursor-pointer"
@@ -799,7 +869,7 @@ const EventsPage = ({
                         <div className="flex items-center justify-between gap-1">
                           <span
                             className={`text-[8.5px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider ${getEventTypeStyle(
-                              event.format
+                              event.format,
                             )}`}
                           >
                             {event.format || "Convention"}
@@ -816,13 +886,20 @@ const EventsPage = ({
 
                         <div className="text-[10.5px] text-[#737373] space-y-0.5 font-medium">
                           <div className="flex items-center gap-1">
-                            <CalendarIcon size={11} className="shrink-0 text-[#9CA3AF]" />
+                            <CalendarIcon
+                              size={11}
+                              className="shrink-0 text-[#9CA3AF]"
+                            />
                             <span>
-                              {dateInfo.full} {event.time ? `• ${event.time}` : ""}
+                              {dateInfo.full}{" "}
+                              {event.time ? `• ${event.time}` : ""}
                             </span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <MapPin size={11} className="shrink-0 text-[#9CA3AF]" />
+                            <MapPin
+                              size={11}
+                              className="shrink-0 text-[#9CA3AF]"
+                            />
                             <span className="truncate">
                               {event.location || event.venue || event.city}
                             </span>
@@ -868,7 +945,7 @@ const EventsPage = ({
           <div className="relative rounded-[16px] overflow-hidden border border-[#E2E8F0] bg-gradient-to-r from-[#FAF8F5] via-[#EFF6FF] to-transparent shadow-xs flex flex-col sm:flex-row items-center justify-between p-4 sm:p-5 min-h-[96px]">
             <div className="absolute inset-y-0 right-0 w-2/3 sm:w-1/2 overflow-hidden pointer-events-none opacity-85">
               <img
-                src="/src/assets/images/fan_content_banner_art_1790284032615.jpg"
+                src={banner}
                 alt="Banner Illustration"
                 className="w-full h-full object-cover object-right"
               />
@@ -915,7 +992,7 @@ const EventsPage = ({
             <div className="flex items-center justify-between">
               <span
                 className={`text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase ${getEventTypeStyle(
-                  ticketModalEvent.format
+                  ticketModalEvent.format,
                 )}`}
               >
                 {ticketModalEvent.format || "Convention"}
@@ -936,7 +1013,9 @@ const EventsPage = ({
                 </div>
                 <h4 className="text-base font-bold">Tickets Confirmed!</h4>
                 <p className="text-xs text-stone-300 max-w-xs mx-auto">
-                  You reserved {ticketQuantity} pass(es) for <strong>{ticketModalEvent.title}</strong> in {ticketModalEvent.city}.
+                  You reserved {ticketQuantity} pass(es) for{" "}
+                  <strong>{ticketModalEvent.title}</strong> in{" "}
+                  {ticketModalEvent.city}.
                 </p>
                 <button
                   type="button"
@@ -957,12 +1036,19 @@ const EventsPage = ({
                     />
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm text-white">{ticketModalEvent.title}</h3>
+                    <h3 className="font-bold text-sm text-white">
+                      {ticketModalEvent.title}
+                    </h3>
                     <p className="text-[11px] text-stone-400">
-                      {formatEventDate(ticketModalEvent.date).full} {ticketModalEvent.time ? `• ${ticketModalEvent.time}` : ""}
+                      {formatEventDate(ticketModalEvent.date).full}{" "}
+                      {ticketModalEvent.time
+                        ? `• ${ticketModalEvent.time}`
+                        : ""}
                     </p>
                     <p className="text-[11px] text-[#FFA800] font-semibold">
-                      {ticketModalEvent.location || ticketModalEvent.venue || ticketModalEvent.city}
+                      {ticketModalEvent.location ||
+                        ticketModalEvent.venue ||
+                        ticketModalEvent.city}
                     </p>
                   </div>
                 </div>
@@ -970,7 +1056,9 @@ const EventsPage = ({
                 <div className="bg-[#121418] p-3 rounded-xl border border-[#262A36] space-y-3">
                   <div className="flex items-center justify-between text-xs">
                     <span className="text-stone-300">Standard Pass</span>
-                    <span className="font-bold text-[#FFA800]">Free Admission</span>
+                    <span className="font-bold text-[#FFA800]">
+                      Free Admission
+                    </span>
                   </div>
 
                   <div className="flex items-center justify-between pt-1 border-t border-[#262A36]">
@@ -978,15 +1066,21 @@ const EventsPage = ({
                     <div className="flex items-center gap-3">
                       <button
                         type="button"
-                        onClick={() => setTicketQuantity((q) => Math.max(1, q - 1))}
+                        onClick={() =>
+                          setTicketQuantity((q) => Math.max(1, q - 1))
+                        }
                         className="w-6 h-6 rounded bg-stone-800 hover:bg-stone-700 flex items-center justify-center text-white cursor-pointer"
                       >
                         <Minus size={11} />
                       </button>
-                      <span className="text-xs font-bold w-4 text-center">{ticketQuantity}</span>
+                      <span className="text-xs font-bold w-4 text-center">
+                        {ticketQuantity}
+                      </span>
                       <button
                         type="button"
-                        onClick={() => setTicketQuantity((q) => Math.min(8, q + 1))}
+                        onClick={() =>
+                          setTicketQuantity((q) => Math.min(8, q + 1))
+                        }
                         className="w-6 h-6 rounded bg-stone-800 hover:bg-stone-700 flex items-center justify-center text-white cursor-pointer"
                       >
                         <Plus size={11} />
@@ -1026,7 +1120,7 @@ const EventsPage = ({
               <div className="flex items-center gap-2">
                 <span
                   className={`text-[8.5px] font-black px-2.5 py-0.5 rounded-none uppercase tracking-wider border ${getEventTypeStyle(
-                    viewingEvent.format
+                    viewingEvent.format,
                   )}`}
                 >
                   {viewingEvent.format || "Convention"}
@@ -1061,7 +1155,9 @@ const EventsPage = ({
                     {viewingEvent.title}
                   </h2>
                   <p className="text-xs text-[#525252] leading-relaxed">
-                    {viewingEvent.description || viewingEvent.subtitle || "Discover exclusive panels, creators, fan meetups and cosplay showcases."}
+                    {viewingEvent.description ||
+                      viewingEvent.subtitle ||
+                      "Discover exclusive panels, creators, fan meetups and cosplay showcases."}
                   </p>
                   <div className="flex flex-wrap items-center gap-3 text-xs text-[#737373] pt-1 font-semibold">
                     <span className="flex items-center gap-1">
@@ -1071,7 +1167,8 @@ const EventsPage = ({
                     {viewingEvent.attendees > 0 && (
                       <span className="flex items-center gap-1">
                         <Users size={12} className="text-[#FFA800]" />
-                        {Number(viewingEvent.attendees).toLocaleString()} attendees
+                        {Number(viewingEvent.attendees).toLocaleString()}{" "}
+                        attendees
                       </span>
                     )}
                   </div>
@@ -1084,12 +1181,20 @@ const EventsPage = ({
                   <div className="flex items-center gap-2 text-xs font-bold text-stone-800">
                     <Ticket size={16} className="text-[#FFA800] shrink-0" />
                     <div>
-                      <p className="text-xs font-bold text-[#171717]">Official Tickets Available</p>
-                      <p className="text-[11px] text-[#7A6F64] font-medium truncate max-w-sm">{viewingEvent.ticketLink}</p>
+                      <p className="text-xs font-bold text-[#171717]">
+                        Official Tickets Available
+                      </p>
+                      <p className="text-[11px] text-[#7A6F64] font-medium truncate max-w-sm">
+                        {viewingEvent.ticketLink}
+                      </p>
                     </div>
                   </div>
                   <a
-                    href={viewingEvent.ticketLink.startsWith("http") ? viewingEvent.ticketLink.trim() : `https://${viewingEvent.ticketLink.trim()}`}
+                    href={
+                      viewingEvent.ticketLink.startsWith("http")
+                        ? viewingEvent.ticketLink.trim()
+                        : `https://${viewingEvent.ticketLink.trim()}`
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-[#FFA800] hover:bg-[#FFB51A] text-black text-xs font-extrabold uppercase tracking-wider transition-colors cursor-pointer shadow-2xs shrink-0 rounded-none"
@@ -1140,7 +1245,11 @@ const EventsPage = ({
                   className="px-5 py-2 bg-[#FFA800] hover:bg-[#FFB51A] text-black font-extrabold text-xs cursor-pointer shadow-xs rounded-none flex items-center gap-1.5"
                 >
                   <Ticket size={13} />
-                  <span>{viewingEvent.ticketLink ? "Get Tickets" : "Reserve Tickets"}</span>
+                  <span>
+                    {viewingEvent.ticketLink
+                      ? "Get Tickets"
+                      : "Reserve Tickets"}
+                  </span>
                 </button>
               </div>
             </div>

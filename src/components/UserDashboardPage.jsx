@@ -9,6 +9,8 @@ import {
 import { getCategoryBadgeClass } from "../utils/categoryColors.js";
 import { BASE_URL } from "../api/api.js";
 
+import fandombanner from "../assets/images/fandom_banner_1790273074334.jpg";
+
 const DEFAULT_FAVORITE_CATEGORIES = [
   { name: "ANIME", image: "/src/assets/images/luffy_avatar_1790269807034.jpg" },
   { name: "GAMING", image: "/src/assets/images/category_gaming_1790259361539.jpg" },
@@ -236,7 +238,7 @@ export const UserDashboardPage = ({
       {/* 1. TOP GREETING BANNER */}
       <div className="relative w-full h-44 sm:h-48 md:h-52 overflow-hidden bg-zinc-950 border-b border-stone-800">
         <img
-          src="/src/assets/images/fandom_banner_1790273074334.jpg"
+          src={fandombanner}
           alt="Fandom Banner"
           className="absolute inset-0 w-full h-full object-cover opacity-85 object-center brightness-[0.8]"
         />

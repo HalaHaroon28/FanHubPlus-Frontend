@@ -1,5 +1,5 @@
 import { HERO_FEATURED } from "../../data/homepageData";
-
+import hero from "../../assets/images/horseman_comic_hero_179025121524.jpg";
 const Hero = ({ onOpenArticle, onExplore }) => {
   return (
     <section className="relative w-full overflow-hidden border-b border-gray-200 bg-[#0A0A0C] select-none group">
@@ -7,7 +7,7 @@ const Hero = ({ onOpenArticle, onExplore }) => {
       <div className="relative w-full h-[400px] sm:h-[480px] md:h-[540px] lg:h-[600px] overflow-hidden">
         {/* Main Comic Artwork Image */}
         <img
-          src="/src/assets/images/horseman_comic_hero_1790251215245.jpg"
+          src={hero}
           alt="The Horseman: Welcome to Florespark"
           className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-[1.015]"
         />
