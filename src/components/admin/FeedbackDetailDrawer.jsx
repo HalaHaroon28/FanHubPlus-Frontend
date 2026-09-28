@@ -123,7 +123,7 @@ const FeedbackDetailDrawer = ({
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.currentTarget.src =
-                      "/src/assets/images/luffy_avatar_1790269807034.jpg";
+                      "/images/luffy_avatar_1790269807034.jpg";
                   }}
                 />
               </div>

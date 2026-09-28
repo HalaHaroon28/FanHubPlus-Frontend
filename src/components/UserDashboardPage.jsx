@@ -10,27 +10,27 @@ import { getCategoryBadgeClass } from "../utils/categoryColors.js";
 import { BASE_URL } from "../api/api.js";
 
 const DEFAULT_FAVORITE_CATEGORIES = [
-  { name: "ANIME", image: "/src/assets/images/luffy_avatar_1790269807034.jpg" },
-  { name: "GAMING", image: "/src/assets/images/category_gaming_1790259361539.jpg" },
-  { name: "MOVIES", image: "/src/assets/images/category_movies_1790259375752.jpg" },
-  { name: "TV SHOWS", image: "/src/assets/images/category_tvshows_1790259388971.jpg" },
-  { name: "K-POP", image: "/src/assets/images/category_kpop_1790259404900.jpg" },
-  { name: "COMICS", image: "/src/assets/images/category_comics_1790259419220.jpg" },
-  { name: "MANGA", image: "/src/assets/images/category_manga_1790259433020.jpg" },
-  { name: "COSPLAY", image: "/src/assets/images/category_cosplay_1790259445408.jpg" }
+  { name: "ANIME", image: "/images/luffy_avatar_1790269807034.jpg" },
+  { name: "GAMING", image: "/images/category_gaming_1790259361539.jpg" },
+  { name: "MOVIES", image: "/images/category_movies_1790259375752.jpg" },
+  { name: "TV SHOWS", image: "/images/category_tvshows_1790259388971.jpg" },
+  { name: "K-POP", image: "/images/category_kpop_1790259404900.jpg" },
+  { name: "COMICS", image: "/images/category_comics_1790259419220.jpg" },
+  { name: "MANGA", image: "/images/category_manga_1790259433020.jpg" },
+  { name: "COSPLAY", image: "/images/category_cosplay_1790259445408.jpg" }
 ];
 
 const getFallbackCategoryImage = (catName = "") => {
   const c = catName.toLowerCase();
-  if (c.includes("anime")) return "/src/assets/images/luffy_avatar_1790269807034.jpg";
-  if (c.includes("gaming")) return "/src/assets/images/category_gaming_1790259361539.jpg";
-  if (c.includes("movie")) return "/src/assets/images/category_movies_1790259375752.jpg";
-  if (c.includes("tv")) return "/src/assets/images/category_tvshows_1790259388971.jpg";
-  if (c.includes("k-pop") || c.includes("music")) return "/src/assets/images/category_kpop_1790259404900.jpg";
-  if (c.includes("comic")) return "/src/assets/images/category_comics_1790259419220.jpg";
-  if (c.includes("manga")) return "/src/assets/images/category_manga_1790259433020.jpg";
-  if (c.includes("cosplay")) return "/src/assets/images/category_cosplay_1790259445408.jpg";
-  return "/src/assets/images/category_anime_1790259342339.jpg";
+  if (c.includes("anime")) return "/images/luffy_avatar_1790269807034.jpg";
+  if (c.includes("gaming")) return "/images/category_gaming_1790259361539.jpg";
+  if (c.includes("movie")) return "/images/category_movies_1790259375752.jpg";
+  if (c.includes("tv")) return "/images/category_tvshows_1790259388971.jpg";
+  if (c.includes("k-pop") || c.includes("music")) return "/images/category_kpop_1790259404900.jpg";
+  if (c.includes("comic")) return "/images/category_comics_1790259419220.jpg";
+  if (c.includes("manga")) return "/images/category_manga_1790259433020.jpg";
+  if (c.includes("cosplay")) return "/images/category_cosplay_1790259445408.jpg";
+  return "/images/category_anime_1790259342339.jpg";
 };
 
 const formatTimeAgo = (dateStr) => {
@@ -236,7 +236,7 @@ export const UserDashboardPage = ({
       {/* 1. TOP GREETING BANNER */}
       <div className="relative w-full h-44 sm:h-48 md:h-52 overflow-hidden bg-zinc-950 border-b border-stone-800">
         <img
-          src="/src/assets/images/fandom_banner_1790273074334.jpg"
+          src="/images/fandom_banner_1790273074334.jpg"
           alt="Fandom Banner"
           className="absolute inset-0 w-full h-full object-cover opacity-85 object-center brightness-[0.8]"
         />
@@ -300,7 +300,7 @@ export const UserDashboardPage = ({
                   alt={cat.name}
                   className="absolute inset-0 w-full h-full object-cover brightness-[0.55] group-hover:brightness-[0.45] transition-all"
                   onError={(e) => {
-                    e.currentTarget.src = "/src/assets/images/luffy_avatar_1790269807034.jpg";
+                    e.currentTarget.src = "/images/luffy_avatar_1790269807034.jpg";
                   }}
                 />
                 <div className="relative z-10 flex items-center justify-center h-full px-2">

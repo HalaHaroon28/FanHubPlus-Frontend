@@ -37,7 +37,7 @@ const getPdfUrl = (item) => {
 };
 
 const getSafeImageUrl = (item) => {
-  if (!item) return "/src/assets/images/one_piece_luffy_1790180189080.jpg";
+  if (!item) return "/images/one_piece_luffy_1790180189080.jpg";
   const candidates = [
     item.thumbnailUrl,
     item.posterImage,
@@ -50,7 +50,7 @@ const getSafeImageUrl = (item) => {
       return url;
     }
   }
-  return "/src/assets/images/one_piece_luffy_1790180189080.jpg";
+  return "/images/one_piece_luffy_1790180189080.jpg";
 };
 
 const LandingContentModal = ({

@@ -7,7 +7,7 @@ const Hero = ({ onOpenArticle, onExplore }) => {
       <div className="relative w-full h-[400px] sm:h-[480px] md:h-[540px] lg:h-[600px] overflow-hidden">
         {/* Main Comic Artwork Image */}
         <img
-          src="/src/assets/images/horseman_comic_hero_1790251215245.jpg"
+          src="/images/horseman_comic_hero_1790251215245.jpg"
           alt="The Horseman: Welcome to Florespark"
           className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-[1.015]"
         />

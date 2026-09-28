@@ -507,7 +507,7 @@ const EventsPage = ({
                 src={
                   mapMode === "satellite"
                     ? "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1400&auto=format&fit=crop&q=80"
-                    : "/src/assets/images/google_maps_karachi_1790285156619.jpg"
+                    : "/images/google_maps_karachi_1790285156619.jpg"
                 }
                 alt="Interactive Map"
                 className="w-full h-full object-cover brightness-[1.02] contrast-[1.02]"
@@ -868,7 +868,7 @@ const EventsPage = ({
           <div className="relative rounded-[16px] overflow-hidden border border-[#E2E8F0] bg-gradient-to-r from-[#FAF8F5] via-[#EFF6FF] to-transparent shadow-xs flex flex-col sm:flex-row items-center justify-between p-4 sm:p-5 min-h-[96px]">
             <div className="absolute inset-y-0 right-0 w-2/3 sm:w-1/2 overflow-hidden pointer-events-none opacity-85">
               <img
-                src="/src/assets/images/fan_content_banner_art_1790284032615.jpg"
+                src="/images/fan_content_banner_art_1790284032615.jpg"
                 alt="Banner Illustration"
                 className="w-full h-full object-cover object-right"
               />

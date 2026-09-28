@@ -269,7 +269,7 @@ const ProfileDrawer = ({ isOpen, onClose, onNavigateToDashboard }) => {
 
       <div className="flex flex-col items-center py-5 border-b border-[#123847]">
         <div className="w-16 h-16 rounded-xl overflow-hidden border border-[#FF5F1F] p-1 shadow-md mb-3 bg-amber-100 flex items-center justify-center">
-          <img src="/src/assets/images/luffy_avatar_1790269807034.jpg" alt="Musab" className="w-full h-full object-cover rounded-lg" />
+          <img src="/images/luffy_avatar_1790269807034.jpg" alt="Musab" className="w-full h-full object-cover rounded-lg" />
         </div>
         <h4 className="font-bold text-[#F2F7F5] text-base">Musab</h4>
         <span className="text-xs text-[#7FA3A8] mt-0.5">Exploring FanHub • Level 1</span>

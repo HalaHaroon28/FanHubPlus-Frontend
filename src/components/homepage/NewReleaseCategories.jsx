@@ -2,19 +2,19 @@ import { useState, useEffect } from "react";
 import { BASE_URL } from "../../api/api";
 
 const CATEGORY_IMAGE_MAP = {
-  anime: "/src/assets/images/category_anime_1790259342339.jpg",
-  gaming: "/src/assets/images/category_gaming_1790259361539.jpg",
-  movies: "/src/assets/images/category_movies_1790259375752.jpg",
-  movie: "/src/assets/images/category_movies_1790259375752.jpg",
-  "tv shows": "/src/assets/images/category_tvshows_1790259388971.jpg",
-  tvshows: "/src/assets/images/category_tvshows_1790259388971.jpg",
-  tv: "/src/assets/images/category_tvshows_1790259388971.jpg",
-  "k-pop": "/src/assets/images/category_kpop_1790259404900.jpg",
-  kpop: "/src/assets/images/category_kpop_1790259404900.jpg",
-  comics: "/src/assets/images/category_comics_1790259419220.jpg",
-  comic: "/src/assets/images/category_comics_1790259419220.jpg",
-  manga: "/src/assets/images/category_manga_1790259433020.jpg",
-  cosplay: "/src/assets/images/category_cosplay_1790259445408.jpg"
+  anime: "/images/category_anime_1790259342339.jpg",
+  gaming: "/images/category_gaming_1790259361539.jpg",
+  movies: "/images/category_movies_1790259375752.jpg",
+  movie: "/images/category_movies_1790259375752.jpg",
+  "tv shows": "/images/category_tvshows_1790259388971.jpg",
+  tvshows: "/images/category_tvshows_1790259388971.jpg",
+  tv: "/images/category_tvshows_1790259388971.jpg",
+  "k-pop": "/images/category_kpop_1790259404900.jpg",
+  kpop: "/images/category_kpop_1790259404900.jpg",
+  comics: "/images/category_comics_1790259419220.jpg",
+  comic: "/images/category_comics_1790259419220.jpg",
+  manga: "/images/category_manga_1790259433020.jpg",
+  cosplay: "/images/category_cosplay_1790259445408.jpg"
 };
 
 const getCategoryCover = (cat) => {
@@ -30,7 +30,7 @@ const getCategoryCover = (cat) => {
       return CATEGORY_IMAGE_MAP[key];
     }
   }
-  return "/src/assets/images/anime_category_cover_1790259649949.jpg";
+  return "/images/anime_category_cover_1790259649949.jpg";
 };
 
 const getTimeAgo = (dateStr) => {
@@ -45,7 +45,7 @@ const getTimeAgo = (dateStr) => {
 };
 
 const getSafeCoverImage = (item) => {
-  if (!item) return "/src/assets/images/one_piece_luffy_1790180189080.jpg";
+  if (!item) return "/images/one_piece_luffy_1790180189080.jpg";
   const candidates = [
     item.thumbnailUrl,
     item.posterImage,
@@ -58,7 +58,7 @@ const getSafeCoverImage = (item) => {
       return url;
     }
   }
-  return "/src/assets/images/one_piece_luffy_1790180189080.jpg";
+  return "/images/one_piece_luffy_1790180189080.jpg";
 };
 
 const NewReleaseCategories = ({
