@@ -927,7 +927,7 @@ const SubmitFanContentPage = ({
             <div className="bg-white rounded-2xl border border-stone-200/90 p-5 shadow-xs relative overflow-hidden">
               <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none overflow-hidden opacity-90 sm:opacity-95">
                 <img
-                  src="/images/anime_desk_study_1790284532931.jpg"
+                  src="/ /src/assets/images/anime_desk_study_1790284532931.jpg"
                   alt="Anime creator at desk"
                   className="w-full h-full object-cover object-left"
                 />
@@ -1023,7 +1023,7 @@ const SubmitFanContentPage = ({
                 <div className="divide-y divide-[#F3F4F6] max-h-[380px] overflow-y-auto">
                   {submissions.map((item) => {
                     const catName = item.categoryId?.name || item.category || "General";
-                    const itemImg = item.thumbnailUrl || item.mediaUrl || item.images?.[0] || "/images/aetheria_wanderer_1790282784893.jpg";
+                    const itemImg = item.thumbnailUrl || item.mediaUrl || item.images?.[0] || "/ /src/assets/images/aetheria_wanderer_1790282784893.jpg";
                     const statusLabel = item.status === "published" ? "Approved" : item.status === "rejected" ? "Rejected" : "Pending";
 
                     return (
@@ -1111,7 +1111,7 @@ const SubmitFanContentPage = ({
 
             <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-black">
               <img
-                src={activeSubmissionModal.thumbnailUrl || activeSubmissionModal.mediaUrl || activeSubmissionModal.images?.[0] || "/images/aetheria_wanderer_1790282784893.jpg"}
+                src={activeSubmissionModal.thumbnailUrl || activeSubmissionModal.mediaUrl || activeSubmissionModal.images?.[0] || "/ /src/assets/images/aetheria_wanderer_1790282784893.jpg"}
                 alt={activeSubmissionModal.title}
                 className="w-full h-full object-cover"
               />

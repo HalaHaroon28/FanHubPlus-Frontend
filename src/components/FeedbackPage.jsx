@@ -437,7 +437,7 @@ const FeedbackPage = ({ onNavigateHome, isLoggedIn = true, onOpenAuth, onRequire
           }
           <div className="absolute inset-0 w-full h-full overflow-hidden">
             <img
-              src="/images/feedback_cliff_sky_1790286020079.jpg"
+              src="/ /src/assets/images/feedback_cliff_sky_1790286020079.jpg"
               alt="Anime traveler on cliff"
               className="w-full h-full object-cover"
             />

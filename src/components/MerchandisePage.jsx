@@ -357,7 +357,7 @@ const MerchandisePage = ({
                 const itemId = item._id || item.id;
                 const catName = item.categoryId?.name || item.category || "General";
                 const isBookmarked = bookmarkedIds.has(itemId);
-                const itemImg = item.imageUrl || "/images/celestial_archer_fig_1790285506979.jpg";
+                const itemImg = item.imageUrl || "/ /src/assets/images/celestial_archer_fig_1790285506979.jpg";
 
                 return (
                   <div
@@ -451,7 +451,7 @@ const MerchandisePage = ({
                   const itemId = item._id || item.id;
                   const catName = item.categoryId?.name || item.category || "General";
                   const isBookmarked = bookmarkedIds.has(itemId);
-                  const itemImg = item.imageUrl || "/images/solaris_rise_sunset_1790283958868.jpg";
+                  const itemImg = item.imageUrl || "/ /src/assets/images/solaris_rise_sunset_1790283958868.jpg";
 
                   return (
                     <div

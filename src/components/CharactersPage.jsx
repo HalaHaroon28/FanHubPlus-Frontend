@@ -358,7 +358,7 @@ const CharactersPage = ({
                   const charId = char._id || char.id;
                   const isBookmarked = bookmarkedIds.has(charId);
                   const categoryName = char.categoryId?.name || char.category || "General";
-                  const imageSrc = char.imageUrl || char.image || "/images/kael_vex_1790281397401.jpg";
+                  const imageSrc = char.imageUrl || char.image || "/ /src/assets/images/kael_vex_1790281397401.jpg";
 
                   return (
                     <div
@@ -373,7 +373,7 @@ const CharactersPage = ({
                           alt={char.name}
                           onError={(e) => {
                             e.target.onerror = null;
-                            e.target.src = "/images/kael_vex_1790281397401.jpg";
+                            e.target.src = "/ /src/assets/images/kael_vex_1790281397401.jpg";
                           }}
                           className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-300"
                           loading="lazy"

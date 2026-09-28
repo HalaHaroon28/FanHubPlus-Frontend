@@ -36,7 +36,7 @@ const PublisherIcon = ({ type }) => {
   </span>;
 };
 const getSafeCover = (item) => {
-  if (!item) return "/images/one_piece_luffy_1790180189080.jpg";
+  if (!item) return "/ /src/assets/images/one_piece_luffy_1790180189080.jpg";
   const candidates = [
     item.posterImage,
     item.image,
@@ -49,7 +49,7 @@ const getSafeCover = (item) => {
       return url;
     }
   }
-  return "/images/one_piece_luffy_1790180189080.jpg";
+  return "/ /src/assets/images/one_piece_luffy_1790180189080.jpg";
 };
 
 const getSubtleImageColor = (item) => {

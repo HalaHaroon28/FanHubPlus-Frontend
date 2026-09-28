@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { X, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { BASE_URL } from "../../api/api";
-import authFandomBg from "../../assets/images/auth_fandom_bg.png";
+import authFandomBg from "../../assets/ /src/assets/images/auth_fandom_bg.png";
 
 const SignInPromptModal = ({
   isOpen,

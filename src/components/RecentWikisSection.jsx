@@ -40,7 +40,7 @@ const RecentWikisSection = ({
   }
           <div className="relative aspect-[4/3] w-full bg-[#0B0B0D] overflow-hidden">
             <img
-    src="/images/pokeball_real_render_1790180829855.jpg"
+    src="/ /src/assets/images/pokeball_real_render_1790180829855.jpg"
     alt="Pokémon Wiki"
     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-200"
   />

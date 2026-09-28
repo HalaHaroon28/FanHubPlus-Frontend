@@ -17,7 +17,7 @@ const COMIC_BANNER_SLIDES = [
     headlineLine2: "SHADOW OF",
     headlineLine3: "THE BLADE",
     ctaText: "BUY NOW",
-    bgImage: "/images/horseman_comic_hero_1790251215245.jpg"
+    bgImage: "/ /src/assets/images/horseman_comic_hero_1790251215245.jpg"
   },
   {
     id: "rippabend",
@@ -27,7 +27,7 @@ const COMIC_BANNER_SLIDES = [
     headlineLine2: "THE OUTLAW",
     headlineLine3: "CHRONICLES",
     ctaText: "BUY NOW",
-    bgImage: "/images/the_horseman_hero_1790251156120.jpg"
+    bgImage: "/ /src/assets/images/the_horseman_hero_1790251156120.jpg"
   },
   {
     id: "isom",
@@ -37,7 +37,7 @@ const COMIC_BANNER_SLIDES = [
     headlineLine2: "ILL-ADVISED",
     headlineLine3: "ENDEAVORS",
     ctaText: "BUY NOW",
-    bgImage: "/images/horseman_comic_hero_1790251215245.jpg",
+    bgImage: "/ /src/assets/images/horseman_comic_hero_1790251215245.jpg",
     hasEmblem: true
   },
   {
@@ -48,7 +48,7 @@ const COMIC_BANNER_SLIDES = [
     headlineLine2: "WELCOME TO",
     headlineLine3: "FLORESPARK",
     ctaText: "BUY NOW",
-    bgImage: "/images/horseman_comic_hero_1790251215245.jpg"
+    bgImage: "/ /src/assets/images/horseman_comic_hero_1790251215245.jpg"
   },
   {
     id: "new-store",
@@ -58,7 +58,7 @@ const COMIC_BANNER_SLIDES = [
     headlineLine2: "COLLECTOR",
     headlineLine3: "VARIANTS & MERCH",
     ctaText: "BUY NOW",
-    bgImage: "/images/the_horseman_hero_1790251156120.jpg"
+    bgImage: "/ /src/assets/images/the_horseman_hero_1790251156120.jpg"
   },
   {
     id: "membership",
@@ -68,7 +68,7 @@ const COMIC_BANNER_SLIDES = [
     headlineLine2: "JOIN THE",
     headlineLine3: "FAN ALLIANCE",
     ctaText: "BUY NOW",
-    bgImage: "/images/horseman_comic_hero_1790251215245.jpg"
+    bgImage: "/ /src/assets/images/horseman_comic_hero_1790251215245.jpg"
   },
   {
     id: "florespark-aces",
@@ -78,7 +78,7 @@ const COMIC_BANNER_SLIDES = [
     headlineLine2: "ACES ON",
     headlineLine3: "THE RUN",
     ctaText: "BUY NOW",
-    bgImage: "/images/the_horseman_hero_1790251215245.jpg"
+    bgImage: "/ /src/assets/images/the_horseman_hero_1790251215245.jpg"
   }
 ];
 const HERO_FEATURED = {
@@ -86,7 +86,7 @@ const HERO_FEATURED = {
   title: "THE HORSEMAN: WELCOME TO FLORESPARK",
   category: "COMICS \xB7 ACTION",
   synopsis: "In the gritty metahuman battleground of Florespark, an armored masked vigilante known as The Horseman descends into the criminal underbelly to dismantle a syndical conspiracy.",
-  posterImage: "/images/horseman_comic_hero_1790251215245.jpg",
+  posterImage: "/ /src/assets/images/horseman_comic_hero_1790251215245.jpg",
   releaseYear: "2024",
   rating: "9.9",
   status: "In Stock & Shipping"
@@ -109,9 +109,9 @@ const TRENDING_CONTENT = [
     genre: "Cyberpunk RPG",
     aspectRatio: "wide",
     bentoSpan: "wide",
-    posterImage: "/images/cyberpunk_2077_art_1790255907017.jpg",
-    videoThumbnail: "/images/cyberpunk_2077_art_1790255907017.jpg",
-    backgroundImage: "/images/cyberpunk_liberty_1790270202706.jpg",
+    posterImage: "/ /src/assets/images/cyberpunk_2077_art_1790255907017.jpg",
+    videoThumbnail: "/ /src/assets/images/cyberpunk_2077_art_1790255907017.jpg",
+    backgroundImage: "/ /src/assets/images/cyberpunk_liberty_1790270202706.jpg",
     type: "Game"
   },
   {
@@ -131,9 +131,9 @@ const TRENDING_CONTENT = [
     genre: "Shonen Action",
     aspectRatio: "tall",
     bentoSpan: "tall",
-    posterImage: "/images/one_piece_luffy_1790180189080.jpg",
-    videoThumbnail: "/images/one_piece_luffy_1790180189080.jpg",
-    backgroundImage: "/images/anime_sunset_banner_1790269825004.jpg",
+    posterImage: "/ /src/assets/images/one_piece_luffy_1790180189080.jpg",
+    videoThumbnail: "/ /src/assets/images/one_piece_luffy_1790180189080.jpg",
+    backgroundImage: "/ /src/assets/images/anime_sunset_banner_1790269825004.jpg",
     type: "Series"
   },
   {
@@ -153,9 +153,9 @@ const TRENDING_CONTENT = [
     genre: "Military FPS",
     aspectRatio: "square",
     bentoSpan: "standard",
-    posterImage: "/images/mw2_ghost_art_1790255926601.jpg",
-    videoThumbnail: "/images/mw2_ghost_art_1790255926601.jpg",
-    backgroundImage: "/images/solaris_protocol_1790282386178.jpg",
+    posterImage: "/ /src/assets/images/mw2_ghost_art_1790255926601.jpg",
+    videoThumbnail: "/ /src/assets/images/mw2_ghost_art_1790255926601.jpg",
+    backgroundImage: "/ /src/assets/images/solaris_protocol_1790282386178.jpg",
     type: "Game"
   },
   {
@@ -175,9 +175,9 @@ const TRENDING_CONTENT = [
     genre: "Action RPG",
     aspectRatio: "wide",
     bentoSpan: "large",
-    posterImage: "/images/elden_ring_tarnished_1790180785046.jpg",
-    videoThumbnail: "/images/elden_ring_tarnished_1790180785046.jpg",
-    backgroundImage: "/images/shadow_realm_ruins_1790282841812.jpg",
+    posterImage: "/ /src/assets/images/elden_ring_tarnished_1790180785046.jpg",
+    videoThumbnail: "/ /src/assets/images/elden_ring_tarnished_1790180785046.jpg",
+    backgroundImage: "/ /src/assets/images/shadow_realm_ruins_1790282841812.jpg",
     type: "Game"
   },
   {
@@ -197,9 +197,9 @@ const TRENDING_CONTENT = [
     genre: "Dark Fantasy",
     aspectRatio: "tall",
     bentoSpan: "tall",
-    posterImage: "/images/solo_leveling_jinwoo_1790251801155.jpg",
-    videoThumbnail: "/images/solo_leveling_jinwoo_1790251801155.jpg",
-    backgroundImage: "/images/shadow_realm_ruins_1790282841812.jpg",
+    posterImage: "/ /src/assets/images/solo_leveling_jinwoo_1790251801155.jpg",
+    videoThumbnail: "/ /src/assets/images/solo_leveling_jinwoo_1790251801155.jpg",
+    backgroundImage: "/ /src/assets/images/shadow_realm_ruins_1790282841812.jpg",
     type: "Comic"
   },
   {
@@ -219,9 +219,9 @@ const TRENDING_CONTENT = [
     genre: "Western Adventure",
     aspectRatio: "wide",
     bentoSpan: "wide",
-    posterImage: "/images/rdr2_western_art_1790255944500.jpg",
-    videoThumbnail: "/images/rdr2_western_art_1790255944500.jpg",
-    backgroundImage: "/images/feedback_cliff_sky_1790286020079.jpg",
+    posterImage: "/ /src/assets/images/rdr2_western_art_1790255944500.jpg",
+    videoThumbnail: "/ /src/assets/images/rdr2_western_art_1790255944500.jpg",
+    backgroundImage: "/ /src/assets/images/feedback_cliff_sky_1790286020079.jpg",
     type: "Game"
   },
   {
@@ -241,9 +241,9 @@ const TRENDING_CONTENT = [
     genre: "Sci-Fi Shooter",
     aspectRatio: "square",
     bentoSpan: "standard",
-    posterImage: "/images/halo_master_chief_1790180155350.jpg",
-    videoThumbnail: "/images/halo_master_chief_1790180155350.jpg",
-    backgroundImage: "/images/solaris_protocol_1790282386178.jpg",
+    posterImage: "/ /src/assets/images/halo_master_chief_1790180155350.jpg",
+    videoThumbnail: "/ /src/assets/images/halo_master_chief_1790180155350.jpg",
+    backgroundImage: "/ /src/assets/images/solaris_protocol_1790282386178.jpg",
     type: "Game"
   },
   {
@@ -263,9 +263,9 @@ const TRENDING_CONTENT = [
     genre: "Psychological Thriller",
     aspectRatio: "wide",
     bentoSpan: "wide",
-    posterImage: "/images/classroom_elite_stairs_1790251764812.jpg",
-    videoThumbnail: "/images/classroom_elite_stairs_1790251764812.jpg",
-    backgroundImage: "/images/anime_desk_study_1790284532931.jpg",
+    posterImage: "/ /src/assets/images/classroom_elite_stairs_1790251764812.jpg",
+    videoThumbnail: "/ /src/assets/images/classroom_elite_stairs_1790251764812.jpg",
+    backgroundImage: "/ /src/assets/images/anime_desk_study_1790284532931.jpg",
     type: "Series"
   },
   {
@@ -285,9 +285,9 @@ const TRENDING_CONTENT = [
     genre: "Fantasy Lore",
     aspectRatio: "tall",
     bentoSpan: "standard",
-    posterImage: "/images/ace_trappola_card_1790180897062.jpg",
-    videoThumbnail: "/images/ace_trappola_card_1790180897062.jpg",
-    backgroundImage: "/images/fan_content_banner_art_1790284032615.jpg",
+    posterImage: "/ /src/assets/images/ace_trappola_card_1790180897062.jpg",
+    videoThumbnail: "/ /src/assets/images/ace_trappola_card_1790180897062.jpg",
+    backgroundImage: "/ /src/assets/images/fan_content_banner_art_1790284032615.jpg",
     type: "Comic"
   },
   {
@@ -307,9 +307,9 @@ const TRENDING_CONTENT = [
     genre: "Psychological Horror",
     aspectRatio: "square",
     bentoSpan: "standard",
-    posterImage: "/images/silent_hill_townfall_1790180807707.jpg",
-    videoThumbnail: "/images/silent_hill_townfall_1790180807707.jpg",
-    backgroundImage: "/images/midnight_signal_rain_1790283977485.jpg",
+    posterImage: "/ /src/assets/images/silent_hill_townfall_1790180807707.jpg",
+    videoThumbnail: "/ /src/assets/images/silent_hill_townfall_1790180807707.jpg",
+    backgroundImage: "/ /src/assets/images/midnight_signal_rain_1790283977485.jpg",
     type: "Game"
   },
   {
@@ -329,9 +329,9 @@ const TRENDING_CONTENT = [
     genre: "K-Pop / Dance",
     aspectRatio: "wide",
     bentoSpan: "wide",
-    posterImage: "/images/pokemon_trainers_grid_1790188697828.jpg",
-    videoThumbnail: "/images/pokemon_trainers_grid_1790188697828.jpg",
-    backgroundImage: "/images/neon_beat_festival_1790282824470.jpg",
+    posterImage: "/ /src/assets/images/pokemon_trainers_grid_1790188697828.jpg",
+    videoThumbnail: "/ /src/assets/images/pokemon_trainers_grid_1790188697828.jpg",
+    backgroundImage: "/ /src/assets/images/neon_beat_festival_1790282824470.jpg",
     type: "Album"
   },
   {
@@ -351,9 +351,9 @@ const TRENDING_CONTENT = [
     genre: "Superhero Canon",
     aspectRatio: "tall",
     bentoSpan: "standard",
-    posterImage: "/images/toyman_comic_art_1790180884859.jpg",
-    videoThumbnail: "/images/toyman_comic_art_1790180884859.jpg",
-    backgroundImage: "/images/velvet_sky_premiere_1790282805907.jpg",
+    posterImage: "/ /src/assets/images/toyman_comic_art_1790180884859.jpg",
+    videoThumbnail: "/ /src/assets/images/toyman_comic_art_1790180884859.jpg",
+    backgroundImage: "/ /src/assets/images/velvet_sky_premiere_1790282805907.jpg",
     type: "Comic"
   }
 ];
@@ -363,7 +363,7 @@ const RECENT_UPDATES = [
     title: "One Piece Chapter 1130: The Ancient Truth",
     category: "Anime / Manga",
     timestamp: "25m ago",
-    thumbnail: "/images/one_piece_luffy_1790180189080.jpg",
+    thumbnail: "/ /src/assets/images/one_piece_luffy_1790180189080.jpg",
     episodeOrChapter: "Ch. 1130"
   },
   {
@@ -371,7 +371,7 @@ const RECENT_UPDATES = [
     title: "Elden Ring Patch 1.14 Weapon Rebalance Notes",
     category: "Gaming",
     timestamp: "1h ago",
-    thumbnail: "/images/elden_ring_tarnished_1790180785046.jpg",
+    thumbnail: "/ /src/assets/images/elden_ring_tarnished_1790180785046.jpg",
     episodeOrChapter: "Patch 1.14"
   },
   {
@@ -379,7 +379,7 @@ const RECENT_UPDATES = [
     title: "Twisted Wonderland Event Episode 4 Subbed",
     category: "Manga / Game",
     timestamp: "3h ago",
-    thumbnail: "/images/ace_trappola_card_1790180897062.jpg",
+    thumbnail: "/ /src/assets/images/ace_trappola_card_1790180897062.jpg",
     episodeOrChapter: "Ep. 4"
   },
   {
@@ -387,7 +387,7 @@ const RECENT_UPDATES = [
     title: "Halo Canon Dossier: SPARTAN-II Blue Team Log",
     category: "Sci-Fi / Lore",
     timestamp: "5h ago",
-    thumbnail: "/images/halo_master_chief_1790180155350.jpg",
+    thumbnail: "/ /src/assets/images/halo_master_chief_1790180155350.jpg",
     episodeOrChapter: "Dossier #42"
   },
   {
@@ -395,7 +395,7 @@ const RECENT_UPDATES = [
     title: "Silent Hill Townfall Community Teaser Breakdown",
     category: "Gaming",
     timestamp: "8h ago",
-    thumbnail: "/images/silent_hill_townfall_1790180807707.jpg",
+    thumbnail: "/ /src/assets/images/silent_hill_townfall_1790180807707.jpg",
     episodeOrChapter: "Teaser #2"
   }
 ];
@@ -406,7 +406,7 @@ const HIGHLIGHT_OF_WEEK = {
   category: "Gaming \xB7 Anime",
   rating: "9.7",
   status: "Community Spotlight",
-  image: "/images/pokemon_family_grid_1790188678999.jpg",
+  image: "/ /src/assets/images/pokemon_family_grid_1790188678999.jpg",
   synopsis: "Voted the standout community lore hub of the week with over 150K user contributions and guide cross-references."
 };
 export {

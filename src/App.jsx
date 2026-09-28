@@ -347,7 +347,7 @@ function App() {
   const [backendTrending, setBackendTrending] = useState([]);
 
   const getSafePoster = (item) => {
-    if (!item) return "/images/one_piece_luffy_1790180189080.jpg";
+    if (!item) return "/ /src/assets/images/one_piece_luffy_1790180189080.jpg";
     const candidates = [
       item.thumbnailUrl,
       item.posterImage,
@@ -360,7 +360,7 @@ function App() {
         return url;
       }
     }
-    return "/images/one_piece_luffy_1790180189080.jpg";
+    return "/ /src/assets/images/one_piece_luffy_1790180189080.jpg";
   };
 
   // Fetch trending content dynamically

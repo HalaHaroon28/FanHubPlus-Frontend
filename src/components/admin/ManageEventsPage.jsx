@@ -39,7 +39,7 @@ const INITIAL_EVENTS_DATA = [
     attendees: 12400,
     status: "UPCOMING",
     statusBadge: "bg-[#DCFCE7] text-[#16A34A]",
-    image: "/images/emberfall_con_expo_1790285333899.jpg"
+    image: "/ /src/assets/images/emberfall_con_expo_1790285333899.jpg"
   },
   {
     id: "evt-2",
@@ -57,7 +57,7 @@ const INITIAL_EVENTS_DATA = [
     attendees: 8900,
     status: "UPCOMING",
     statusBadge: "bg-[#DCFCE7] text-[#16A34A]",
-    image: "/images/neon_beat_festival_1790282824470.jpg"
+    image: "/ /src/assets/images/neon_beat_festival_1790282824470.jpg"
   },
   {
     id: "evt-3",
@@ -75,7 +75,7 @@ const INITIAL_EVENTS_DATA = [
     attendees: 15300,
     status: "ONGOING",
     statusBadge: "bg-[#FEF3C7] text-[#D97706]",
-    image: "/images/starlight_expo_con_1790282403579.jpg"
+    image: "/ /src/assets/images/starlight_expo_con_1790282403579.jpg"
   },
   {
     id: "evt-4",
@@ -93,7 +93,7 @@ const INITIAL_EVENTS_DATA = [
     attendees: 3200,
     status: "COMPLETED",
     statusBadge: "bg-[#F1F5F9] text-[#64748B]",
-    image: "/images/velvet_sky_premiere_1790282805907.jpg"
+    image: "/ /src/assets/images/velvet_sky_premiere_1790282805907.jpg"
   },
   {
     id: "evt-5",
@@ -111,7 +111,7 @@ const INITIAL_EVENTS_DATA = [
     attendees: 1800,
     status: "DRAFT",
     statusBadge: "bg-[#F5EADF] text-[#B87033]",
-    image: "/images/cinema_screening_1790284828452.jpg"
+    image: "/ /src/assets/images/cinema_screening_1790284828452.jpg"
   }
 ];
 
@@ -171,7 +171,7 @@ const ManageEventsPage = () => {
     attendees: 2500,
     status: "Upcoming",
     ticketLink: "",
-    image: "/images/starlight_expo_con_1790282403579.jpg"
+    image: "/ /src/assets/images/starlight_expo_con_1790282403579.jpg"
   });
 
   const getCategoryBadgeStyle = (cat) => {
@@ -282,7 +282,7 @@ const ManageEventsPage = () => {
                 status: st,
                 statusBadge: getStatusBadgeStyle(st),
                 ticketLink: e.ticketLink || "",
-                image: e.imageUrl || "/images/emberfall_con_expo_1790285333899.jpg"
+                image: e.imageUrl || "/ /src/assets/images/emberfall_con_expo_1790285333899.jpg"
               };
             });
             setEvents(mapped);
@@ -341,7 +341,7 @@ const ManageEventsPage = () => {
       attendees: 2500,
       status: "Upcoming",
       ticketLink: "",
-      image: "/images/starlight_expo_con_1790282403579.jpg"
+      image: "/ /src/assets/images/starlight_expo_con_1790282403579.jpg"
     });
     setIsAddModalOpen(true);
   };
@@ -408,7 +408,7 @@ const ManageEventsPage = () => {
               ? "Completed"
               : "Draft",
       ticketLink: evt.ticketLink || "",
-      image: evt.image || "/images/starlight_expo_con_1790282403579.jpg"
+      image: evt.image || "/ /src/assets/images/starlight_expo_con_1790282403579.jpg"
     });
     setIsAddModalOpen(true);
   };

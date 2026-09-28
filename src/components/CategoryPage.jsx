@@ -3,61 +3,61 @@ import { Loader2 } from "lucide-react";
 import { fetchCategoriesFromApi } from "../api/api";
 
 const CATEGORY_IMAGE_MAP = {
-  anime: "/images/category_anime_1790259342339.jpg",
-  gaming: "/images/category_gaming_1790259361539.jpg",
-  movies: "/images/category_movies_1790259375752.jpg",
-  movie: "/images/category_movies_1790259375752.jpg",
-  "tv shows": "/images/category_tvshows_1790259388971.jpg",
-  tvshows: "/images/category_tvshows_1790259388971.jpg",
-  tv: "/images/category_tvshows_1790259388971.jpg",
-  "k-pop": "/images/category_kpop_1790259404900.jpg",
-  kpop: "/images/category_kpop_1790259404900.jpg",
-  comics: "/images/category_comics_1790259419220.jpg",
-  comic: "/images/category_comics_1790259419220.jpg",
-  manga: "/images/category_manga_1790259433020.jpg",
-  cosplay: "/images/category_cosplay_1790259445408.jpg"
+  anime: "/ /src/assets/images/category_anime_1790259342339.jpg",
+  gaming: "/ /src/assets/images/category_gaming_1790259361539.jpg",
+  movies: "/ /src/assets/images/category_movies_1790259375752.jpg",
+  movie: "/ /src/assets/images/category_movies_1790259375752.jpg",
+  "tv shows": "/ /src/assets/images/category_tvshows_1790259388971.jpg",
+  tvshows: "/ /src/assets/images/category_tvshows_1790259388971.jpg",
+  tv: "/ /src/assets/images/category_tvshows_1790259388971.jpg",
+  "k-pop": "/ /src/assets/images/category_kpop_1790259404900.jpg",
+  kpop: "/ /src/assets/images/category_kpop_1790259404900.jpg",
+  comics: "/ /src/assets/images/category_comics_1790259419220.jpg",
+  comic: "/ /src/assets/images/category_comics_1790259419220.jpg",
+  manga: "/ /src/assets/images/category_manga_1790259433020.jpg",
+  cosplay: "/ /src/assets/images/category_cosplay_1790259445408.jpg"
 };
 
 const FALLBACK_CATEGORIES = [
   {
     name: "Anime",
     slug: "anime",
-    iconUrl: "/images/category_anime_1790259342339.jpg",
+    iconUrl: "/ /src/assets/images/category_anime_1790259342339.jpg",
   },
   {
     name: "Gaming",
     slug: "gaming",
-    iconUrl: "/images/category_gaming_1790259361539.jpg",
+    iconUrl: "/ /src/assets/images/category_gaming_1790259361539.jpg",
   },
   {
     name: "Movies",
     slug: "movies",
-    iconUrl: "/images/category_movies_1790259375752.jpg",
+    iconUrl: "/ /src/assets/images/category_movies_1790259375752.jpg",
   },
   {
     name: "TV Shows",
     slug: "tv-shows",
-    iconUrl: "/images/category_tvshows_1790259388971.jpg",
+    iconUrl: "/ /src/assets/images/category_tvshows_1790259388971.jpg",
   },
   {
     name: "K-Pop",
     slug: "k-pop",
-    iconUrl: "/images/category_kpop_1790259404900.jpg",
+    iconUrl: "/ /src/assets/images/category_kpop_1790259404900.jpg",
   },
   {
     name: "Manga",
     slug: "manga",
-    iconUrl: "/images/category_manga_1790259433020.jpg",
+    iconUrl: "/ /src/assets/images/category_manga_1790259433020.jpg",
   },
   {
     name: "Comics",
     slug: "comics",
-    iconUrl: "/images/category_comics_1790259419220.jpg",
+    iconUrl: "/ /src/assets/images/category_comics_1790259419220.jpg",
   },
   {
     name: "Cosplay",
     slug: "cosplay",
-    iconUrl: "/images/category_cosplay_1790259445408.jpg",
+    iconUrl: "/ /src/assets/images/category_cosplay_1790259445408.jpg",
   },
 ];
 
@@ -74,7 +74,7 @@ const getCategoryCover = (cat) => {
       return CATEGORY_IMAGE_MAP[key];
     }
   }
-  return "/images/category_anime_1790259342339.jpg";
+  return "/ /src/assets/images/category_anime_1790259342339.jpg";
 };
 
 const CategoryPage = ({ onSelectCategory }) => {
@@ -121,7 +121,7 @@ const CategoryPage = ({ onSelectCategory }) => {
       <div className="w-full overflow-hidden border-b border-[#EDE4D6] bg-zinc-950 shadow-sm">
         <div className="relative w-full h-[180px] sm:h-[220px] overflow-hidden">
           <img
-            src="/images/fandom_banner_1790273074334.jpg"
+            src="/ /src/assets/images/fandom_banner_1790273074334.jpg"
             alt="Categories Banner"
             className="w-full h-full object-cover object-center brightness-[0.70] contrast-[1.1]"
           />
@@ -167,7 +167,7 @@ const CategoryPage = ({ onSelectCategory }) => {
                 getCategoryCover(cat) ||
                 cat.iconUrl ||
                 FALLBACK_CATEGORIES[idx % FALLBACK_CATEGORIES.length]?.iconUrl ||
-                "/images/category_anime_1790259342339.jpg";
+                "/ /src/assets/images/category_anime_1790259342339.jpg";
 
               return (
                 <div

@@ -113,7 +113,7 @@ const DashboardPage = ({
                       : "bg-[#E0F2FE] text-[#0284C7]",
                   submittedBy: item.submittedBy?.name || "Community Fan",
                   date: dateStr,
-                  image: item.thumbnailUrl || item.mediaUrl || "/images/interstellar_space_1790270312783.jpg"
+                  image: item.thumbnailUrl || item.mediaUrl || "/ /src/assets/images/interstellar_space_1790270312783.jpg"
                 };
               });
               setSubmissions(mapped);
@@ -138,7 +138,7 @@ const DashboardPage = ({
                       : "bg-[#FFEBE5] text-[#FF5F1F]",
                   submittedBy: fb.userId?.name || "Fan Member",
                   date: dateStr,
-                  image: fb.userId?.avatarUrl || "/images/sora_hayashi_1790281509190.jpg"
+                  image: fb.userId?.avatarUrl || "/ /src/assets/images/sora_hayashi_1790281509190.jpg"
                 };
               });
               setFeedbackItems(mappedFb);
@@ -577,7 +577,7 @@ const DashboardPage = ({
                                 alt={row.title}
                                 className="w-full h-full object-cover"
                                 onError={(e) => {
-                                  e.currentTarget.src = "/images/interstellar_space_1790270312783.jpg";
+                                  e.currentTarget.src = "/ /src/assets/images/interstellar_space_1790270312783.jpg";
                                 }}
                               />
                             </div>
